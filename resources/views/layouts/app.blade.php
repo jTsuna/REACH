@@ -38,7 +38,12 @@
                 {{ $slot }}
             </main>
         </div>
-
+        <script>
+        function toggleElement(elemID){
+            document.getElementById(elemID).classList.toggle("hidden");
+            document.getElementById(elemID).classList.toggle("block");
+        }
+        </script>
         @stack('modals')
 
         @livewireScripts
