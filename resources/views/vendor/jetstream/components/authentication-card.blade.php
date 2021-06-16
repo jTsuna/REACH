@@ -1,8 +1,9 @@
-<div class="w-screen h-screen flex flex-col justify-center items-center sm:pt-0 bg-no-repeat bg-cover bg-white" style="background-image: url('bg.png');">
+<div class="flex flex-col items-center justify-center w-screen h-screen bg-white bg-no-repeat bg-cover sm:pt-0"
+    style="background-image: url('bg.png');">
     <div class="flex items-center">
         {{ $logo }}
     </div>
-    <div class="w-full sm:max-w-md mt-6 px-6 pt-4 pb-4 bg-white shadow-md overflow-hidden sm:rounded-lg ">
+    <div class="w-full px-6 pt-4 pb-4 mt-6 overflow-hidden bg-white shadow-md bg-opacity-90 sm:max-w-md sm:rounded-lg ">
         {{ $slot }}
     </div>
 </div>
