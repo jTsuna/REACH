@@ -23,8 +23,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded=[];
-    protected $table='users';
+    protected $guarded = [];
+    protected $table = 'users';
 
     /**
      * The attributes that should be hidden for arrays.
@@ -55,4 +55,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }
