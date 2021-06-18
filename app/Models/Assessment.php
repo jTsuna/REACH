@@ -11,4 +11,9 @@ class Assessment extends Model
 
     protected $guarded = [];
     protected $table = 'assessments';
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }

@@ -11,4 +11,9 @@ class Type extends Model
 
     protected $guarded = [];
     protected $table = 'types';
+
+    public function assessment()
+    {
+        return $this->hasMany(Assessment::class);
+    }
 }
