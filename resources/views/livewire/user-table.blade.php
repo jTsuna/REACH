@@ -143,13 +143,25 @@
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
                                                                     type="password" name="password" />
                                                             </div>
+                                                            <div class="mt-4">
+                                                                <x-jet-label for="role" value="{{ __('Role') }}" />
+                                                                <select id="role" name="role_id"
+                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                                                    @foreach ($roles as $role)
+                                                                        <option name="role_id"
+                                                                            value="{{ $role->id }}">
+                                                                            {{ $role->name }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
                                                             <div class="py-2 text-center">
                                                                 <x-jet-label for="program"
                                                                     value="{{ __('Program') }}" />
                                                                 <x-jet-input id="program"
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
                                                                     type="text" name="Program"
-                                                                    value="{{ $user->program }}" required />
+                                                                    value="{{ $user->program }}" />
                                                             </div>
                                                             <div class="py-2 text-center">
                                                                 <x-jet-label for="student"
@@ -157,7 +169,15 @@
                                                                 <x-jet-input id="student"
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
                                                                     type="number" name="student"
-                                                                    value="{{ $user->student }}" min="10" required />
+                                                                    value="{{ $user->studentNum }}" min="10" />
+                                                            </div>
+                                                            <div class="py-2 text-center">
+                                                                <x-jet-label for="employee"
+                                                                    value="{{ __('Employee') }}" />
+                                                                <x-jet-input id="employee"
+                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
+                                                                    type="number" name="employee"
+                                                                    value="{{ $user->employeeNum }}" min="10" />
                                                             </div>
                                                             <div class="flex items-center justify-center mt-4">
                                                                 <button
@@ -229,17 +249,34 @@
                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
                                     type="password" name="password" required autocomplete="new-password" />
                             </div>
+                            <div class="mt-4">
+                                <x-jet-label for="role" value="{{ __('Role') }}" />
+                                <select id="role" name="role_id"
+                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                    @foreach ($roles as $role)
+                                        <option name="role_id" value="{{ $role->id }}">
+                                            {{ $role->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="py-2 ">
                                 <x-jet-label for="program" value="{{ __('Program') }}" />
                                 <x-jet-input id="program"
                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl" type="text"
-                                    name="program" required />
+                                    name="program" />
                             </div>
                             <div class="py-2 ">
                                 <x-jet-label for="student" value="{{ __('Student') }}" />
                                 <x-jet-input id="student"
                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                    type="number" name="student" min="10" required />
+                                    type="number" name="studentNum" min="10" />
+                            </div>
+                            <div class="py-2 ">
+                                <x-jet-label for="employee" value="{{ __('Employee') }}" />
+                                <x-jet-input id="employee"
+                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
+                                    type="number" name="employeeNum" min="10" />
                             </div>
 
                             <div class="flex items-center justify-center mt-4">

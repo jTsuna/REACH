@@ -3,13 +3,17 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use App\Models\Role;
 use Livewire\Component;
 
 class UserTable extends Component
 {
     public $users;
-    public function mount(User $users){
-        $this->users=$users->all();
+    public $roles;
+    public function mount(User $users, Role $roles)
+    {
+        $this->users = $users->all();
+        $this->roles = $roles->all();
     }
     public function render()
     {
