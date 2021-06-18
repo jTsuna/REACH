@@ -1,5 +1,5 @@
 <div>
-    <div class="flex flex-wrap justify-end my-2">
+    <div class="flex flex-wrap justify-end my-2 space-x-6">
         <button onclick="toggleElement('create')"
             class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-gray-500 rounded-lg hover:text-white hover:bg-black hover:border-gray-400 active:bg-black focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
