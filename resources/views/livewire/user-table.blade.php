@@ -1,13 +1,20 @@
 <div>
-    <div class="flex flex-wrap justify-end my-2 space-x-6">
-        <button onclick="toggleElement('create')"
-            class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-gray-500 rounded-lg hover:text-white hover:bg-black hover:border-gray-400 active:bg-black focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-            Add User
-        </button>
+    <div class="flex flex-wrap justify-between my-2 space-x-6">
+        <div>
+            <input type="text" placeholder="Search.."
+                class="w-full p-2 border-2 border-yellow-400 appearance-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-xl" />
+        </div>
+        <div>
+            <button onclick="toggleElement('create')"
+                class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+                Add User
+            </button>
+        </div>
     </div>
     <div class="flex flex-col pt-4">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
