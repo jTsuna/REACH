@@ -12,7 +12,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Add User
+                Add Assessment
             </button>
         </div>
     </div>
@@ -25,23 +25,15 @@
                             <tr>
                                 <th scope="col"
                                     class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
-                                    Name
+                                    Type of Assessment
                                 </th>
                                 <th scope="col"
                                     class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
-                                    Email
+                                    Status
                                 </th>
                                 <th scope="col"
                                     class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
-                                    Account Type
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
-                                    Student Number
-                                </th>
-                                <th scope="col"
-                                    class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
-                                    Employee Number
+                                    Date
                                 </th>
                                 <th scope="col" class="relative px-6 py-3">
                                     <span class="sr-only">Edit</span>
@@ -52,39 +44,32 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            @foreach ($users as $user)
+                            @foreach ($assessments as $assessment)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center justify-start">
                                             <div class="ml-4">
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    {{ $user->name }}
+                                                    {{ $assessment->type->name }}
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-500">
-                                            {{ $user->email }}
+                                            {{ $assessment->status }}
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <span class="inline-flex px-2 text-sm leading-5 text-gray-500">
-                                            {{ $user->role->name }}
-                                        </span>
-                                    </td>
                                     <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                        {{ $user->studentNum }}
-                                    </td>
-                                    <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                        {{ $user->employeeNum }}
+                                        {{ $assessment->duedate }}
                                     </td>
                                     <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
-                                        <button onClick="toggleElement('show{{ $user->id }}')"
+                                        <button onClick="toggleElement('show{{ $assessment->id }}')"
                                             class="text-green-600 hover:text-green-900">Edit</button>
                                     </td>
                                     <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
-                                        <form method="post" action="{{ route('users.destroy', $user->id) }}">
+                                        <form method="post"
+                                            action="{{ route('assessments.destroy', $assessment->id) }}">
                                             @csrf
                                             @method('delete')
                                             <button type="submit"
@@ -92,7 +77,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                                <div id="show{{ $user->id }}" class="fixed inset-0 z-10 hidden overflow-y-auto"
+                                <div id="show{{ $assessment->id }}" class="fixed inset-0 z-10 hidden overflow-y-auto"
                                     aria-labelledby="modal-title" role="dialog" aria-modal="true">
                                     <div
                                         class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
@@ -104,7 +89,7 @@
                                             class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                                             <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
                                                 <div class="mb-6 space-x-10 sm:flex sm:items-start">
-                                                    <button onclick="toggleElement('show{{ $user->id }}')"
+                                                    <button onclick="toggleElement('show{{ $assessment->id }}')"
                                                         class="flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto sm:mx-0 sm:h-10 sm:w-10">
                                                         <!-- Heroicon name: outline/exclamation -->
                                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -117,75 +102,54 @@
                                                     </button>
                                                 </div>
                                                 <div class="flex items-center justify-center">
-                                                    <h2 class="text-xl font-bold text-gray-900">Add User</h2>
+                                                    <h2 class="text-xl font-bold text-gray-900">Add Assessments</h2>
                                                 </div>
                                                 <div>
                                                     <x-jet-validation-errors class="mb-4" />
                                                     <form method="POST"
-                                                        action="{{ route('users.update', $user->id) }}">
+                                                        action="{{ route('assessments.update', $assessment->id) }}">
                                                         @csrf
                                                         @method('patch')
                                                         <div
                                                             class="w-full p-6 mt-4 border-4 border-yellow-400 rounded-lg">
-                                                            <div class="py-2 text-center">
-                                                                <x-jet-label for="name" value="{{ __('Name') }}" />
-                                                                <x-jet-input id="name"
-                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                                                    type="text" name="name" value="{{ $user->name }}"
-                                                                    required autofocus autocomplete="name" />
-                                                            </div>
 
-                                                            <div class="py-2 text-center ">
-                                                                <x-jet-label for="email" value="{{ __('Email') }}" />
-                                                                <x-jet-input id="email"
-                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                                                    type="email" name="email"
-                                                                    value="{{ $user->email }}" required />
-                                                            </div>
-
-                                                            <div class="py-2 text-center">
-                                                                <x-jet-label for="password"
-                                                                    value="{{ __('Password') }}" />
-                                                                <x-jet-input id="password"
-                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                                                    type="password" name="password" />
-                                                            </div>
                                                             <div class="mt-4">
-                                                                <x-jet-label for="role" value="{{ __('Role') }}" />
-                                                                <select id="role" name="role_id"
+                                                                <x-jet-label for="type"
+                                                                    value="{{ __('Select Assessment') }}" />
+                                                                <select id="type" name="type_id"
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                                                    @foreach ($roles as $role)
+                                                                    @foreach ($types as $type)
                                                                         <option name="role_id"
-                                                                            value="{{ $role->id }}">
-                                                                            {{ $role->name }}
+                                                                            value="{{ $type->id }}">
+                                                                            {{ $type->name }}
                                                                         </option>
                                                                     @endforeach
                                                                 </select>
                                                             </div>
-                                                            <div class="py-2 text-center">
-                                                                <x-jet-label for="program"
-                                                                    value="{{ __('Program') }}" />
-                                                                <x-jet-input id="program"
-                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                                                    type="text" name="Program"
-                                                                    value="{{ $user->program }}" />
+
+                                                            <div class="pt-4">
+                                                                <x-jet-label for="status"
+                                                                    value="{{ __('Status') }}" />
+                                                                <select id="statud" name="status"
+                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                                                    <option name="status" value="On Going">
+                                                                        On Going
+                                                                    </option>
+                                                                    <option name="status" value="Upcoming">
+                                                                        Upcoming
+                                                                    </option>
+                                                                </select>
                                                             </div>
-                                                            <div class="py-2 text-center">
-                                                                <x-jet-label for="student"
-                                                                    value="{{ __('Student') }}" />
-                                                                <x-jet-input id="student"
+
+                                                            <div class="pt-4 ">
+                                                                <x-jet-label for="date" value="{{ __('Date') }}" />
+                                                                <x-jet-input id="date"
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                                                    type="number" name="student"
-                                                                    value="{{ $user->studentNum }}" min="10" />
+                                                                    type="date" name="duedate"
+                                                                    value="{{ $assessment->duedate }}" required />
                                                             </div>
-                                                            <div class="py-2 text-center">
-                                                                <x-jet-label for="employee"
-                                                                    value="{{ __('Employee') }}" />
-                                                                <x-jet-input id="employee"
-                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                                                    type="number" name="employee"
-                                                                    value="{{ $user->employeeNum }}" min="10" />
-                                                            </div>
+
+
                                                             <div class="flex items-center justify-center mt-4">
                                                                 <button
                                                                     class="inline-flex items-center justify-center w-full px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-white uppercase transition bg-red-500 border border-red-500 rounded-lg hover:bg-red-800 hover:border-red-400 active:bg-black focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
@@ -229,61 +193,45 @@
                         </button>
                     </div>
                     <div class="flex items-center justify-center">
-                        <h2 class="text-xl font-bold text-gray-900">Add Student</h2>
+                        <h2 class="text-xl font-bold text-gray-900">Add Assessment</h2>
                     </div>
                     <div>
                         <x-jet-validation-errors class="mb-4" />
-                        <form method="POST" action="{{ route('users.store') }}">
+                        <form method="POST" action="{{ route('assessments.store') }}">
                             @csrf
                             <div class="w-full p-6 mt-4 border-4 border-yellow-500 rounded-lg">
-                                <div class="py-2 ">
-                                    <x-jet-label for="name" value="{{ __('Name') }}" />
-                                    <x-jet-input id="name"
-                                        class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                        type="text" name="name" required autofocus autocomplete="name" />
-                                </div>
 
-                                <div class="py-2 ">
-                                    <x-jet-label for="email" value="{{ __('Email') }}" />
-                                    <x-jet-input id="email"
-                                        class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                        type="email" name="email" required />
-                                </div>
 
-                                <div class="py-2 ">
-                                    <x-jet-label for="password" value="{{ __('Password') }}" />
-                                    <x-jet-input id="password"
-                                        class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                        type="password" name="password" required autocomplete="new-password" />
-                                </div>
                                 <div class="mt-4">
-                                    <x-jet-label for="role" value="{{ __('Role') }}" />
-                                    <select id="role" name="role_id"
+                                    <x-jet-label for="type" value="{{ __('Select Assessment') }}" />
+                                    <select id="type" name="type_id"
                                         class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                        @foreach ($roles as $role)
-                                            <option name="role_id" value="{{ $role->id }}">
-                                                {{ $role->name }}
+                                        @foreach ($types as $type)
+                                            <option name="role_id" value="{{ $type->id }}">
+                                                {{ $type->name }}
                                             </option>
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="py-2 ">
-                                    <x-jet-label for="program" value="{{ __('Program') }}" />
-                                    <x-jet-input id="program"
-                                        class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                        type="text" name="program" />
+
+                                <div class="pt-4">
+                                    <x-jet-label for="status" value="{{ __('Status') }}" />
+                                    <select id="statud" name="status"
+                                        class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        <option name="status" value="On Going">
+                                            On Going
+                                        </option>
+                                        <option name="status" value="Upcoming">
+                                            Upcoming
+                                        </option>
+                                    </select>
                                 </div>
-                                <div class="py-2 ">
-                                    <x-jet-label for="student" value="{{ __('Student') }}" />
-                                    <x-jet-input id="student"
+
+                                <div class="pt-4 ">
+                                    <x-jet-label for="date" value="{{ __('Date') }}" />
+                                    <x-jet-input id="date"
                                         class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                        type="number" name="studentNum" min="10" />
-                                </div>
-                                <div class="py-2 ">
-                                    <x-jet-label for="employee" value="{{ __('Employee') }}" />
-                                    <x-jet-input id="employee"
-                                        class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                        type="number" name="employeeNum" min="10" />
+                                        type="date" name="duedate" required />
                                 </div>
 
                                 <div class="flex items-center justify-center mt-4">
@@ -292,12 +240,13 @@
                                         {{ __('ADD') }}
                                     </button>
                                 </div>
+
                             </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
+
+    </div>

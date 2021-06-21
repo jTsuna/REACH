@@ -16,7 +16,7 @@ class CreateAssessmentsTable extends Migration
         Schema::create('assessments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('type_id');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->date('duedate');
             $table->timestamps();
             $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');

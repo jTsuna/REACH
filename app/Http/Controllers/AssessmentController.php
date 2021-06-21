@@ -14,7 +14,7 @@ class AssessmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('assessment.index');
     }
 
     /**
@@ -35,7 +35,8 @@ class AssessmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Assessment::create($request->all());
+        return redirect()->route('assessments.index');
     }
 
     /**
@@ -46,7 +47,6 @@ class AssessmentController extends Controller
      */
     public function show(Assessment $assessment)
     {
-        //
     }
 
     /**
@@ -69,7 +69,8 @@ class AssessmentController extends Controller
      */
     public function update(Request $request, Assessment $assessment)
     {
-        //
+        $assessment->fill($request->all())->save();
+        return redirect()->route('assessments.index');
     }
 
     /**
@@ -80,6 +81,7 @@ class AssessmentController extends Controller
      */
     public function destroy(Assessment $assessment)
     {
-        //
+        $assessment->delete();
+        return back();
     }
 }
