@@ -19,7 +19,7 @@
                         :active="request()->routeIs('assessments.index')">
                         {{ __('Assessments') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('dashboard') }}">
+                    <x-jet-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
                         {{ __('Meet') }}
                     </x-jet-nav-link>
                 </div>
@@ -163,10 +163,11 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Users') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-jet-responsive-nav-link href="{{ route('assessments.index') }}"
+                :active="request()->routeIs('assessments.index')">
                 {{ __('Assessment') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            <x-jet-responsive-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
                 {{ __('Meet') }}
             </x-jet-responsive-nav-link>
         </div>
