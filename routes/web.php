@@ -28,3 +28,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/meet-link', function () {
     return view('meet.index');
 })->name('meet');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/students', function () {
+    return view('studtable.index');
+})->name('studtable');

@@ -13,7 +13,10 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Users') }}
+                        {{ __('Counselors') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('studtable') }}" :active="request()->routeIs('studtable')">
+                        {{ __('Students') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('assessments.index') }}"
                         :active="request()->routeIs('assessments.index')">
@@ -161,7 +164,10 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Users') }}
+                {{ __('Counselors') }}
+            </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('studtable') }}" :active="request()->routeIs('studtable')">
+                {{ __('Students') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('assessments.index') }}"
                 :active="request()->routeIs('assessments.index')">

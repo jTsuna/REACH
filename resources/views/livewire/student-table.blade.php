@@ -12,7 +12,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Add Counselor
+                Add Student
             </button>
         </div>
     </div>
@@ -33,7 +33,7 @@
                                 </th>
                                 <th scope="col"
                                     class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
-                                    Employee Number
+                                    Student Number
                                 </th>
                                 <th scope="col" class="relative px-6 py-3">
                                     <span class="sr-only">Edit</span>
@@ -61,7 +61,7 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                        {{ $user->employeeNum }}
+                                        {{ $user->studentNum }}
                                     </td>
                                     <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
                                         <button onClick="toggleElement('show{{ $user->id }}')"
@@ -135,12 +135,12 @@
                                                                     type="password" name="password" />
                                                             </div>
                                                             <div class="py-2 text-center">
-                                                                <x-jet-label for="employee"
-                                                                    value="{{ __('Employee') }}" />
+                                                                <x-jet-label for="student"
+                                                                    value="{{ __('Student Number') }}" />
                                                                 <x-jet-input id="employee"
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                                                    type="number" name="employeeNum"
-                                                                    value="{{ $user->employeeNum }}" min="10" />
+                                                                    type="number" name="studentNum"
+                                                                    value="{{ $user->studentNum }}" min="10" />
                                                             </div>
                                                             <div class="flex items-center justify-center mt-4">
                                                                 <button
@@ -185,13 +185,13 @@
                         </button>
                     </div>
                     <div class="flex items-center justify-center">
-                        <h2 class="text-xl font-bold text-gray-900">Add Counselor</h2>
+                        <h2 class="text-xl font-bold text-gray-900">Add Student</h2>
                     </div>
                     <div>
                         <x-jet-validation-errors class="mb-4" />
                         <form method="POST" action="{{ route('users.store') }}">
                             @csrf
-                            <input type="hidden" name="role_id" value="3" />
+                            <input type="hidden" name="role_id" value="4    " />
                             <div class="w-full p-6 mt-4 border-4 border-yellow-500 rounded-lg">
                                 <div class="py-2 ">
                                     <x-jet-label for="name" value="{{ __('Name') }}" />
@@ -215,10 +215,10 @@
                                 </div>
 
                                 <div class="py-2 ">
-                                    <x-jet-label for="employee" value="{{ __('Employee') }}" />
-                                    <x-jet-input id="employee"
+                                    <x-jet-label for="student" value="{{ __('Student Number') }}" />
+                                    <x-jet-input id="student"
                                         class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                        type="number" name="employeeNum" min="10" />
+                                        type="number" name="studentNum" min="10" />
                                 </div>
 
                                 <div class="flex items-center justify-center mt-4">
@@ -234,5 +234,4 @@
             </div>
         </div>
     </div>
-
 </div>
