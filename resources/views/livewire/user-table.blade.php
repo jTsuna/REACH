@@ -1,18 +1,24 @@
 <div>
-    <div class="flex flex-wrap justify-between my-2 space-x-6">
-        <div>
-            <input type="text" placeholder="Search.."
-                class="w-full p-2 border-2 border-yellow-400 appearance-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-xl" />
+    <div class="flex flex-col flex-wrap justify-between my-2 space-y-2 md:space-x-6 md:flex-row">
+        <div class="relative py-2">
+            <svg width="20" height="20" fill="currentColor"
+                class="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
+            </svg>
+            <input wire:model="search"
+                class="w-full py-2 pl-10 text-sm text-black placeholder-gray-500 border border-yellow-200 rounded-md focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 focus:outline-none"
+                type="text" placeholder="Search Users" />
         </div>
         <div>
             <button onclick="toggleElement('create')"
-                class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
+                class="inline-flex items-center justify-center w-full px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg md:w-auto hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Add Counselor
+                Add User
             </button>
         </div>
     </div>
@@ -33,7 +39,11 @@
                                 </th>
                                 <th scope="col"
                                     class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
-                                    Employee Number
+                                    ID Number
+                                </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
+                                    Account Type
                                 </th>
                                 <th scope="col" class="relative px-6 py-3">
                                     <span class="sr-only">Edit</span>
@@ -61,7 +71,10 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                        {{ $user->employeeNum }}
+                                        {{ $user->idNum }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                        {{ $user->role->name }}
                                     </td>
                                     <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
                                         <button onClick="toggleElement('show{{ $user->id }}')"
@@ -111,7 +124,7 @@
                                                         @method('patch')
                                                         <div
                                                             class="w-full p-6 mt-4 border-4 border-yellow-400 rounded-lg">
-                                                            <div class="py-2 text-center">
+                                                            <div class="py-2">
                                                                 <x-jet-label for="name" value="{{ __('Name') }}" />
                                                                 <x-jet-input id="name"
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
@@ -119,7 +132,7 @@
                                                                     required autofocus autocomplete="name" />
                                                             </div>
 
-                                                            <div class="py-2 text-center ">
+                                                            <div class="py-2">
                                                                 <x-jet-label for="email" value="{{ __('Email') }}" />
                                                                 <x-jet-input id="email"
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
@@ -127,21 +140,37 @@
                                                                     value="{{ $user->email }}" required />
                                                             </div>
 
-                                                            <div class="py-2 text-center">
+                                                            <div class="py-2">
                                                                 <x-jet-label for="password"
                                                                     value="{{ __('Password') }}" />
                                                                 <x-jet-input id="password"
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
                                                                     type="password" name="password" />
                                                             </div>
-                                                            <div class="py-2 text-center">
-                                                                <x-jet-label for="employee"
-                                                                    value="{{ __('Employee') }}" />
-                                                                <x-jet-input id="employee"
-                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                                                    type="number" name="employeeNum"
-                                                                    value="{{ $user->employeeNum }}" min="10" />
+
+                                                            <div class="py-2">
+                                                                <x-jet-label for="role"
+                                                                    value="{{ __('User Type') }}" />
+                                                                <select id="role" name="role_id"
+                                                                    class="block w-full mt-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                                                    @foreach ($roles as $role)
+                                                                        <option name="role_id"
+                                                                            value="{{ $role->id }}">
+                                                                            {{ $role->name }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </select>
                                                             </div>
+
+                                                            <div class="py-2">
+                                                                <x-jet-label for="idnum"
+                                                                    value="{{ __('ID Number') }}" />
+                                                                <x-jet-input id="idnum"
+                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
+                                                                    type="number" name="idNum"
+                                                                    value="{{ $user->idNum }}" min="10" />
+                                                            </div>
+
                                                             <div class="flex items-center justify-center mt-4">
                                                                 <button
                                                                     class="inline-flex items-center justify-center w-full px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-white uppercase transition bg-red-500 border border-red-500 rounded-lg hover:bg-red-800 hover:border-red-400 active:bg-black focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
@@ -149,17 +178,16 @@
                                                                 </button>
                                                             </div>
                                                         </div>
+                                                    </form>
                                                 </div>
-                                                </form>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
-                @endforeach
-
-                </tbody>
-                </table>
             </div>
         </div>
     </div>
@@ -185,7 +213,7 @@
                         </button>
                     </div>
                     <div class="flex items-center justify-center">
-                        <h2 class="text-xl font-bold text-gray-900">Add Counselor</h2>
+                        <h2 class="text-xl font-bold text-gray-900">Add User</h2>
                     </div>
                     <div>
                         <x-jet-validation-errors class="mb-4" />
@@ -214,11 +242,22 @@
                                         type="password" name="password" required autocomplete="new-password" />
                                 </div>
 
-                                <div class="py-2 ">
-                                    <x-jet-label for="employee" value="{{ __('Employee') }}" />
-                                    <x-jet-input id="employee"
+                                <div class="py-2">
+                                    <x-jet-label for="role" value="{{ __('User Type') }}" />
+                                    <select id="role" name="role_id"
+                                        class="block w-full mt-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        @foreach ($roles as $role)
+                                            <option name="role_id" value="{{ $role->id }}">{{ $role->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="py-2">
+                                    <x-jet-label for="idnum" value="{{ __('ID Number') }}" />
+                                    <x-jet-input id="idnum"
                                         class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
-                                        type="number" name="employeeNum" min="10" />
+                                        type="number" name="idNum" min="10" />
                                 </div>
 
                                 <div class="flex items-center justify-center mt-4">
@@ -228,11 +267,10 @@
                                     </button>
                                 </div>
                             </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
