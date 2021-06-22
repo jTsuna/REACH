@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow-lg">
+<nav x-data="{ open: false }" class="bg-white border-b-2 border-red-500 shadow-lg">
     <!-- Primary Navigation Menu -->
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -12,16 +12,35 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Users') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('assessments.index') }}"
-                        :active="request()->routeIs('assessments.index')">
-                        {{ __('Assessments') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
-                        {{ __('Meet') }}
-                    </x-jet-nav-link>
+                    @if (auth()->user()->role_id == 1)
+                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('Users') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('assessments.index') }}"
+                            :active="request()->routeIs('assessments.index')">
+                            {{ __('Assessments') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
+                            {{ __('Meet') }}
+                        </x-jet-nav-link>
+
+                    @elseif(auth()->user()->role_id == 3)
+                        <x-jet-nav-link href="{{ route('graph') }}" :active="request()->routeIs('graph')">
+                            {{ __('Home') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('Assessments') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('calendar') }}" :active="request()->routeIs('calendar')">
+                            {{ __('Calendar') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('studtable') }}" :active="request()->routeIs('studtable')">
+                            {{ __('Students') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
+                            {{ __('Messages') }}
+                        </x-jet-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -95,7 +114,7 @@
                             @else
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
+                                        class="inline-flex items-center px-3 py-2 text-sm font-semibold leading-4 text-gray-900 transition bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -160,16 +179,35 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Users') }}
-            </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('assessments.index') }}"
-                :active="request()->routeIs('assessments.index')">
-                {{ __('Assessment') }}
-            </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
-                {{ __('Meet') }}
-            </x-jet-responsive-nav-link>
+            @if (auth()->user()->role_id == 1)
+                <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    {{ __('Users') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('assessments.index') }}"
+                    :active="request()->routeIs('assessments.index')">
+                    {{ __('Assessment') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
+                    {{ __('Meet') }}
+                </x-jet-responsive-nav-link>
+
+            @elseif(auth()->user()->role_id == 3)
+                <x-jet-responsive-nav-link href="{{ route('graph') }}" :active="request()->routeIs('graph')">
+                    {{ __('Home') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    {{ __('Assessments') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('calendar') }}" :active="request()->routeIs('calendar')">
+                    {{ __('Calendar') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('studtable') }}" :active="request()->routeIs('studtable')">
+                    {{ __('Students') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
+                    {{ __('Messages') }}
+                </x-jet-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

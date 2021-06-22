@@ -18,6 +18,31 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+
+        .line {
+            background: repeating-linear-gradient(to bottom,
+                    #eee,
+                    #eee 1px,
+                    #fff 1px,
+                    #fff 8%);
+        }
+
+        .tick {
+            background: repeating-linear-gradient(to right,
+                    #eee,
+                    #eee 1px,
+                    #fff 1px,
+                    #fff 5%);
+        }
+
+    </style>
 </head>
 
 <body class="font-sans antialiased ">
@@ -37,7 +62,6 @@
             document.getElementById(elemID).classList.toggle("hidden");
             document.getElementById(elemID).classList.toggle("block");
         }
-
     </script>
     @stack('modals')
 

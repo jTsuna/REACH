@@ -29,3 +29,15 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/meet-link', function () {
     return view('meet.index');
 })->name('meet');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/counselor-home', function () {
+    return view('graph.index');
+})->name('graph');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/schedule', function () {
+    return view('calendar.index');
+})->name('calendar');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/student-list', function () {
+    return view('studtable.index');
+})->name('studtable');
+

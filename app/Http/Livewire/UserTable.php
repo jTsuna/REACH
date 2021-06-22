@@ -21,7 +21,7 @@ class UserTable extends Component
 
     public function render()
     {
-        $this->users = !is_null($this->search) ? User::search($this->search)->orderBy('role_id')->get() : User::orderBy('role_id')->get();
+        $this->users = !is_null($this->search) ? User::search($this->search)->orderBy('role_id', 'desc')->get() : User::orderBy('role_id', 'desc')->get();
         return view('livewire.user-table', [
             'users' => $this->users,
         ]);
