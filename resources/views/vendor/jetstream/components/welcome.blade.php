@@ -5,7 +5,7 @@
         @elseif(auth()->user()->role_id ==3)
             @include('graph.index')
         @else
-            test2
+            @include('graph.index')
         @endif
     </div>
 

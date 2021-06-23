@@ -53,7 +53,7 @@
                                         {{ $user->idNum }}
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                        {{ $user->department->name }}
+                                        {{ $user->department_id }}
                                     </td>
                                     <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
                                         <button onClick="toggleElement('show{{ $user->id }}')"

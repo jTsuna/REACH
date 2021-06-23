@@ -37,7 +37,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/schedule', function () {
     return view('calendar.index');
 })->name('calendar');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/student-list', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/students', function () {
     return view('studtable.index');
 })->name('studtable');
 

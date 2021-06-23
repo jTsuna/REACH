@@ -4,7 +4,6 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use App\Models\Role;
-use App\Models\Program;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -15,11 +14,9 @@ class UserTable extends Component
     public $users;
     public $search = null;
     public $roles;
-    public $programs;
 
-    public function mount(Role $roles, Program $programs){
+    public function mount(Role $roles){
         $this->roles = $roles->all();
-        $this->programs = $programs->all();
     }
 
     public function render()
