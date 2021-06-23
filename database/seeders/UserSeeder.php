@@ -24,28 +24,27 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'role_id' => 3,
-            'name' => 'Counselor',
-            'email' => 'counselor@reach.com',
+            'role_id' => 2,
+            'name' => 'Head Counselor',
+            'email' => 'hcounselor@reach.com',
             'password' => Hash::make('ngb6002'),
             'idNum' => 1234567891
         ]);
 
         User::create([
-            'role_id' => 4,
-            'name' => 'erika',
-            'email' => 'ramosyvonnee@gmail.com',
-            'password' => Hash::make('123456'),
-            'program' => 'IT',
-            'idNum' => 2018109437
+            'role_id' => 3,
+            'name' => 'Counselor',
+            'email' => 'counselor@reach.com',
+            'password' => Hash::make('ngb6002'),
+            'idNum' => 1234567892
         ]);
 
         User::create([
             'role_id' => 4,
+            'department_id' => 15,
             'name' => 'Albert',
             'email' => 'labayanalbert@gmail.com',
             'password' => Hash::make('123456'),
-            'program' => 'IT',
             'idNum' => 2018140511
         ]);
     }

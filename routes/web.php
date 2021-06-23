@@ -41,3 +41,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/student-list', function (
     return view('studtable.index');
 })->name('studtable');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/student-list', function () {
+    return view('studtable.note');
+})->name('note');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/inbox', function () {
+    return view('message.index');
+})->name('message');
+

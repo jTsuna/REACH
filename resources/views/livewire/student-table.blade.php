@@ -23,6 +23,10 @@
                                     class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
                                     ID Number
                                 </th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
+                                    Department
+                                </th>
                                 <th scope="col" class="relative px-6 py-3">
                                     <span class="sr-only">Edit</span>
                                 </th>
@@ -47,6 +51,9 @@
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                                         {{ $user->idNum }}
+                                    </td>
+                                    <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                        {{ $user->department->name }}
                                     </td>
                                     <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
                                         <button onClick="toggleElement('show{{ $user->id }}')"

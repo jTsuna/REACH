@@ -1,5 +1,4 @@
-<x-app-layout>
-    <div class="mx-auto mt-20 bg-white border border-gray-200 rounded-lg bg-opacity-90 max-w-7xl">
+    <div class="mx-auto rounded-lg bg-opacity-90 max-w-7xl">
         <div class="w-full p-10">
             <div class="flex flex-col justify-center">
                 <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -216,4 +215,3 @@
             }
         }
     </script>
-</x-app-layout>
