@@ -53,7 +53,7 @@
                                         {{ $user->idNum }}
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                        {{ $user->department_id }}
+                                        {{ $departments->where('id', $user->department_id)->first()->name }}
                                     </td>
                                     <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
                                         <button onClick="toggleElement('show{{ $user->id }}')"
@@ -116,6 +116,16 @@
                                                                     class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
                                                                     type="number" name="idNum"
                                                                     value="{{ $user->idNum }}" min="10" disabled />
+                                                            </div>
+
+                                                            <div class="py-2">
+                                                                <x-jet-label for="deptnum"
+                                                                    value="{{ __('Department') }}" />
+                                                                <x-jet-input id="deptnum"
+                                                                    class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
+                                                                    type="number" name="department_id"
+                                                                    value="{{ $departments->where('id', $user->department_id)->first()->name }}"
+                                                                    min="10" disabled />
                                                             </div>
 
                                                             <div class="flex items-center justify-center mt-4">

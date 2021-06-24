@@ -17,35 +17,43 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::resource('users', 'App\Http\Controllers\UserController');
+Route::group(['middleware' => ['auth:sanctum']], function() {
 
-Route::resource('assessments', 'App\Http\Controllers\AssessmentController');
+    Route::resources([
+        'users' => 'App\Http\Controllers\UserController',
+        'assessments' => 'App\Http\Controllers\AssessmentController'
+    ]);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/meet-link', function () {
-    return view('meet.index');
-})->name('meet');
+    Route::get('/meet-link', function () {
+        return view('meet.index');
+    })->name('meet');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/counselor-home', function () {
-    return view('graph.index');
-})->name('graph');
+    Route::get('/counselor-home', function () {
+        return view('graph.index');
+    })->name('graph');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/schedule', function () {
-    return view('calendar.index');
-})->name('calendar');
+    Route::get('/schedule', function () {
+        return view('calendar.index');
+    })->name('calendar');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/students', function () {
-    return view('studtable.index');
-})->name('studtable');
+    Route::get('/students', function () {
+        return view('studtable.index');
+    })->name('studtable');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/student-list', function () {
-    return view('studtable.note');
-})->name('note');
+    Route::get('/student-list', function () {
+        return view('studtable.note');
+    })->name('note');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/inbox', function () {
-    return view('message.index');
-})->name('message');
+    Route::get('/inbox', function () {
+        return view('message.index');
+    })->name('message');
 
+    Route::get('/counselors', function () {
+        return view('counselor.index');
+    })->name('counselor');
+
+});

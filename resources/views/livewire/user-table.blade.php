@@ -219,7 +219,7 @@
                         <x-jet-validation-errors class="mb-4" />
                         <form method="POST" action="{{ route('users.store') }}">
                             @csrf
-                            <input type="hidden" name="role_id" value="3" />
+                            
                             <div class="w-full p-6 mt-4 border-4 border-yellow-500 rounded-lg">
                                 <div class="py-2 ">
                                     <x-jet-label for="name" value="{{ __('Name') }}" />
@@ -248,6 +248,18 @@
                                         class="block w-full mt-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                         @foreach ($roles as $role)
                                             <option name="role_id" value="{{ $role->id }}">{{ $role->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="py-2">
+                                    <x-jet-label for="role" value="{{ __('Department') }}" />
+                                    <select id="role" name="role_id"
+                                        class="block w-full mt-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        @foreach ($departments as $department)
+                                            <option name="role_id" value="{{ $department->id }}">
+                                                {{ $department->name }}
                                             </option>
                                         @endforeach
                                     </select>

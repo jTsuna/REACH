@@ -71,10 +71,6 @@ class DepartmentSeeder extends Seeder
         ]);
 
         Department::create([
-            'name' => 'Office of International Career and Exchange Program'
-        ]);
-
-        Department::create([
             'name' => 'Department of Arts and Letters'
         ]);
     }

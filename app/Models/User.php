@@ -10,8 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Scout\Searchable;
-
-class User extends Authenticatable
+// implements MustVerifyEmail
+class User extends Authenticatable 
 {
     use Searchable;
     use HasApiTokens;
