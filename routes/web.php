@@ -56,4 +56,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         return view('counselor.index');
     })->name('counselor');
 
+    Route::get('/counselor-archive', function () {
+        return view('counselor.archive');
+    })->name('archive');
+
 });

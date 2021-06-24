@@ -2,9 +2,9 @@
     <div class="w-full">
         @if (auth()->user()->role_id == 1)
             @livewire('user-table')
-        @elseif(auth()->user()->role_id ==3)
+        @elseif(auth()->user()->role_id == 2)
             @include('graph.index')
-        @else
+        @elseif(auth()->user()->role_id == 3)
             @include('graph.index')
         @endif
     </div>
