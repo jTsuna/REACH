@@ -17,12 +17,94 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-    @livewireStyles
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
+    @livewireStyles
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 
+    <script src="{{ asset('js/main.js') }}"></script>
+
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialDate: '2020-09-12',
+                initialView: 'timeGridWeek',
+                nowIndicator: true,
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                },
+                navLinks: true, // can click day/week names to navigate views
+                editable: true,
+                selectable: true,
+                selectMirror: true,
+                dayMaxEvents: true, // allow "more" link when too many events
+                events: [{
+                        title: 'All Day Event',
+                        start: '2020-09-01',
+                    },
+                    {
+                        title: 'Long Event',
+                        start: '2020-09-07',
+                        end: '2020-09-10'
+                    },
+                    {
+                        groupId: 999,
+                        title: 'Repeating Event',
+                        start: '2020-09-09T16:00:00'
+                    },
+                    {
+                        groupId: 999,
+                        title: 'Repeating Event',
+                        start: '2020-09-16T16:00:00'
+                    },
+                    {
+                        title: 'Conference',
+                        start: '2020-09-11',
+                        end: '2020-09-13'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2020-09-12T10:30:00',
+                        end: '2020-09-12T12:30:00'
+                    },
+                    {
+                        title: 'Lunch',
+                        start: '2020-09-12T12:00:00'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2020-09-12T14:30:00'
+                    },
+                    {
+                        title: 'Happy Hour',
+                        start: '2020-09-12T17:30:00'
+                    },
+                    {
+                        title: 'Dinner',
+                        start: '2020-09-12T20:00:00'
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: '2020-09-13T07:00:00'
+                    },
+                    {
+                        title: 'Click for Google',
+                        url: 'http://google.com/',
+                        start: '2020-09-28'
+                    }
+                ]
+            });
+
+            calendar.render();
+        });
+    </script>
 
     <style>
         [x-cloak] {

@@ -11,10 +11,22 @@
                             <span x-text="year" class="ml-1 text-lg font-normal text-gray-600"></span>
                         </div>
                         <div class="flex items-center justify-center px-1 space-x-6" style="padding-top: 2px;">
-                            <button onclick="toggleElement('request')"
-                                class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition duration-700 bg-white border border-red-500 rounded-lg hover:text-white hover:bg-red-500 hover:border-red-400 active:bg-white focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
-                                Request Schedule
-                            </button>
+                            @if (auth()->user()->role_id == 2)
+                                <a href="{{ route('daily') }}"
+                                    class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition duration-700 bg-white border border-red-500 rounded-lg hover:text-white hover:bg-red-500 hover:border-red-400 active:bg-white focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
+                                    View Daily
+                                </a>
+                            @elseif(auth()->user()->role_id == 3)
+                                <a href="{{ route('daily') }}"
+                                    class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition duration-700 bg-white border border-red-500 rounded-lg hover:text-white hover:bg-red-500 hover:border-red-400 active:bg-white focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
+                                    View Daily
+                                </a>
+                            @elseif(auth()->user()->role_id == 4)
+                                <button onclick="toggleElement('request')"
+                                    class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition duration-700 bg-white border border-red-500 rounded-lg hover:text-white hover:bg-red-500 hover:border-red-400 active:bg-white focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
+                                    Request Schedule
+                                </button>
+                            @endif
                             <button type="button"
                                 class="inline-flex items-center p-1 leading-none transition duration-100 ease-in-out border rounded-lg cursor-pointer focus:outline-none hover:bg-gray-200"
                                 :class="{'cursor-not-allowed opacity-25': month == 0 }"

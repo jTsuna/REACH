@@ -6,6 +6,8 @@
             @include('graph.index')
         @elseif(auth()->user()->role_id == 3)
             @include('graph.index')
+        @elseif(auth()->user()->role_id == 4)
+            @include('student.index')
         @endif
     </div>
 

@@ -60,4 +60,16 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         return view('counselor.archive');
     })->name('archive');
 
+    Route::get('/daily-view', function () {
+        return view('calendar.daily');
+    })->name('daily');
+
+    Route::get('/assessment-list', function () {
+        return view('assessment.list');
+    })->name('list');
+
+    Route::get('/assessment-NeedsAnalysis', function () {
+        return view('assessment.needsanalysis');
+    })->name('needsanalysis');
+
 });
