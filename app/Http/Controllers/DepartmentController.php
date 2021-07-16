@@ -14,7 +14,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        return view('department.index');
     }
 
     /**
@@ -69,7 +69,8 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department)
     {
-        //
+        $department->fill($request->all())->save();
+        return back();
     }
 
     /**

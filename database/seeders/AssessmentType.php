@@ -15,10 +15,6 @@ class AssessmentType extends Seeder
     public function run()
     {
         Type::create([
-            'name' => 'Intake Interview'
-        ]);
-
-        Type::create([
             'name' => 'Needs Analysis'
         ]);
 

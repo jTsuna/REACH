@@ -21,7 +21,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
 
     Route::resources([
         'users' => 'App\Http\Controllers\UserController',
-        'assessments' => 'App\Http\Controllers\AssessmentController'
+        'assessments' => 'App\Http\Controllers\AssessmentController',
+        'departments' => 'App\Http\Controllers\DepartmentController'
     ]);
 
     Route::get('/dashboard', function () {
@@ -71,5 +72,12 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/assessment-NeedsAnalysis', function () {
         return view('assessment.needsanalysis');
     })->name('needsanalysis');
+
+    Route::get('/student-profile', function () {
+        return view('student.studentprofile');
+    })->name('studentprofile');
+
+
+    Route::post('/file-upload', 'App\Http\Controllers\UserController@multipleUpload')->name('multipleupload');
 
 });

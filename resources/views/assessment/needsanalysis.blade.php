@@ -118,7 +118,7 @@
             </div>
 
             <div class="flex items-center justify-end m-4">
-                <button
+                <button type="submit"
                     class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition bg-yellow-400 border border-yellow-500 rounded-lg hover:bg-yellow-600 hover:border-yellow-700 focus:outline-none focus:border-yellow-400 focus:ring focus:ring-yellow-300 disabled:opacity-25">
                     Submit
                 </button>

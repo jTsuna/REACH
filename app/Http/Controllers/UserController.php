@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Imports\UserImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -97,6 +99,11 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
+        return back();
+    }
+
+    public function multipleUpload(Request $request){
+        Excel::import(new UserImport(), $request->file('file'));
         return back();
     }
 }
