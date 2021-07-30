@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,14 +21,14 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::resources([
         'users' => 'App\Http\Controllers\UserController',
         'assessments' => 'App\Http\Controllers\AssessmentController',
-        'departments' => 'App\Http\Controllers\DepartmentController'
+        'departments' => 'App\Http\Controllers\DepartmentController',
     ]);
 
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/meet-link', function () {
+    Route::get('/meetLinks', function () {
         return view('meet.index');
     })->name('meet');
 
@@ -73,9 +72,6 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         return view('assessment.needsanalysis');
     })->name('needsanalysis');
 
-    Route::get('/student-profile', function () {
-        return view('student.studentprofile');
-    })->name('studentprofile');
 
 
     Route::post('/file-upload', 'App\Http\Controllers\UserController@multipleUpload')->name('multipleupload');

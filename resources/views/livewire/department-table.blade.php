@@ -1,37 +1,5 @@
 <div>
     <div>
-        <div class="flex flex-col flex-wrap justify-between my-2 space-y-2 md:space-x-6 md:flex-row">
-            <div class="relative py-2">
-                <svg width="20" height="20" fill="currentColor"
-                    class="absolute text-gray-400 transform -translate-y-1/2 left-3 top-1/2">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" />
-                </svg>
-                <input wire:model="search"
-                    class="w-full py-2 pl-10 text-sm text-black placeholder-gray-500 border border-yellow-200 rounded-md focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 focus:outline-none"
-                    type="text" placeholder="Search Users" />
-            </div>
-            <div class="flex items-center justify-center space-x-6">
-                <button onclick="toggleElement('create')"
-                    class="inline-flex items-center justify-center w-full px-4 py-2 space-x-3 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg md:w-auto hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                    <span>Add Department</span>
-                </button>
-                <button onclick="toggleElement('file')"
-                    class="inline-flex items-center justify-center w-full px-4 py-2 space-x-3 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg md:w-auto hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                    </svg>
-                    <span>Upload File</span>
-                </button>
-            </div>
-        </div>
         <div class="flex flex-col pt-4">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">

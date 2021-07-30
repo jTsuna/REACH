@@ -43,7 +43,7 @@ class UserController extends Controller
             $user->password = Hash::make($request->password);
             $user->save();
         }
-        return redirect()->route('dashboard');
+        return back();
     }
 
     /**
@@ -54,7 +54,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $user = User::findOrFail($id);
         
+        return view('student.studentprofile', compact('user'));
         
     }
 
@@ -66,7 +68,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -84,7 +86,7 @@ class UserController extends Controller
             $user->password = Hash::make($request->password);
             $user->save();
         }
-        return redirect()->route('dashboard');
+        return back();
         
 
     }

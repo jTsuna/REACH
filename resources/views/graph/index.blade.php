@@ -2,33 +2,19 @@
         <div class="w-full p-10">
             <div class="flex flex-col justify-center">
                 <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
-                    <div
-                        class="flex flex-col items-center justify-between p-2 bg-white border border-gray-300 rounded-lg shadow-md h-28">
-                        <span class="text-lg font-bold tracking-wide text-gray-900 uppercase">
-                            Department 1 Population
-                        </span>
-                        <span class="text-3xl font-extrabold text-gray-700">
-                            1,200
-                        </span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-between p-2 bg-white border border-gray-300 rounded-lg shadow-md h-28">
-                        <span class="text-lg font-bold tracking-wide text-gray-900 uppercase">
-                            Department 2 Population
-                        </span>
-                        <span class="text-3xl font-extrabold text-gray-700">
-                            1,000
-                        </span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-between p-2 bg-white border border-gray-300 rounded-lg shadow-md h-28">
-                        <span class="text-lg font-bold tracking-wide text-gray-900 uppercase">
-                            Department 3 Population
-                        </span>
-                        <span class="text-3xl font-extrabold text-gray-700">
-                            900
-                        </span>
-                    </div>
+                    @foreach (App\Models\Department::all() as $department)
+                        @if ($department->user_id == auth()->user()->id)
+                            <div
+                                class="flex flex-col items-center justify-between h-full p-2 bg-white border border-gray-300 rounded-lg shadow-md">
+                                <span class="text-lg font-bold tracking-wide text-gray-900 uppercase">
+                                    {{ $department->name }}
+                                </span>
+                                <span class="text-3xl font-extrabold text-gray-700">
+                                    {{ App\Models\User::where('role_id', 4)->where('department_id', $department->id)->count() }}
+                                </span>
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
 
                 <div class="flex flex-col justify-between md:space-x-2 md:flex-row">

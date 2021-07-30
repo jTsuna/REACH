@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ff30bc2d7b07887818fe1c7561b1c08",
+    "content-hash": "8053bb3c8e9fb0df9aab9cd8bf217320",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2038,16 +2038,16 @@
         },
         {
             "name": "laravel/scout",
-            "version": "v9.1.2",
+            "version": "v9.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/scout.git",
-                "reference": "ccd34d0efd99489059e3e2bcd223aaa360af62cf"
+                "reference": "5d62c83ea11b98f1f89ee78bdb82d7b8a1791e67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/scout/zipball/ccd34d0efd99489059e3e2bcd223aaa360af62cf",
-                "reference": "ccd34d0efd99489059e3e2bcd223aaa360af62cf",
+                "url": "https://api.github.com/repos/laravel/scout/zipball/5d62c83ea11b98f1f89ee78bdb82d7b8a1791e67",
+                "reference": "5d62c83ea11b98f1f89ee78bdb82d7b8a1791e67",
                 "shasum": ""
             },
             "require": {
@@ -2106,7 +2106,7 @@
                 "issues": "https://github.com/laravel/scout/issues",
                 "source": "https://github.com/laravel/scout"
             },
-            "time": "2021-06-15T16:00:14+00:00"
+            "time": "2021-07-13T16:13:35+00:00"
         },
         {
             "name": "laravel/tinker",

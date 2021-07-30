@@ -1,83 +1,101 @@
 <x-app-layout>
     <div
-        class="flex flex-col justify-center mt-32 bg-white shadow-lg md:rounded-lg md:mx-20 lg:mt-10 lg:mx-36 bg-opacity-90">
+        class="flex flex-col justify-center mx-10 mt-32 bg-white shadow-lg md:mx-64 md:rounded-lg lg:mt-10 bg-opacity-90">
         <div class="flex items-center justify-center border-b border-gray-900 shadow-md">
-            <div class="flex items-center justify-between w-full m-6">
+            <div class="flex items-center justify-start w-full m-6">
                 <span class="text-xl font-bold text-gray-900">Student Profile</span>
-                <button onclick="toggleElement('create')"
-                    class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-gray-500 rounded-lg hover:text-white hover:bg-red-600 hover:border-red-400 active:bg-red focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
-                    <span>Create Room</span>
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="flex items-center justify-center w-6 h-6 text-yellow-600" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
-                    </svg>
-                </button>
             </div>
         </div>
         <div class="flex flex-col items-center justify-center p-2 md:flex-row">
             <div class="flex flex-col justify-center py-10 overflow-y-auto md:flex-rowitems-center md:w-full">
                 <div class="flex items-center justify-start w-full">
                     <div class="flex items-center justify-center w-full">
-                        <form method="post" action="">
+                        <form method="post" action="{{ route('users.update', $user->id) }}">
+                            @csrf
+                            @method('patch')
+                            <div class="flex flex-col justify-center py-4">
+                                <label for="program"
+                                    class="block text-sm font-medium text-left text-gray-900">Program</label>
+                                <input id="program" value="{{ $user->program }}"
+                                    class="block w-full border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    type="text" name="program" />
+                            </div>
+
+
                             <fieldset
-                                class="flex items-center justify-center w-full p-2 space-x-6 border border-gray-900">
+                                class="flex items-center justify-center w-full p-2 space-x-6 border border-gray-900 rounded-md">
                                 <legend class="text-sm tracking-widest uppercase">Personal Contact Information</legend>
                                 <div class="flex flex-col items-center justify-center md:flex-row">
-                                    <label for="contact1" class="block text-sm font-medium text-gray-700">Smart Mobile
+                                    <label for="smartnum" class="block text-sm font-medium text-gray-900">Smart Mobile
                                         No.</label>
-                                    <input id="contact1"
-                                        class="block w-full border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        type="text" name="contact1" />
+                                    <input id="smartnum" value="{{ $user->smartnum }}"
+                                        class="block w-full border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        type="text" name="smartnum" />
                                 </div>
+
+
                                 <div class="flex flex-col items-center justify-center md:flex-row">
-                                    <label for="contact2" class="block text-sm font-medium text-gray-700">
+                                    <label for="non_smart_num" class="block text-sm font-medium text-gray-900">
                                         Non-Smart Mobile No.
                                     </label>
-                                    <input id="contact2"
-                                        class="block w-full border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        type="text" name="contact2" />
+                                    <input id="non_smart_num" value="{{ $user->non_smart_num }}"
+                                        class="block w-full border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        type="text" name="non_smart_num" />
                                 </div>
                             </fieldset>
 
+
                             <fieldset
-                                class="flex flex-col items-center justify-center w-full p-2 mt-2 space-x-6 border border-gray-900">
+                                class="flex flex-col items-center justify-center w-full p-2 mt-2 space-x-6 border border-gray-900 rounded-md">
                                 <legend class="text-sm tracking-widest uppercase">Parent Contact Information</legend>
                                 <div class="flex flex-col items-center justify-between w-full px-2">
                                     <label for="mother"
-                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-700">
+                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
                                         Mother's Name
                                     </label>
-                                    <input id="mother"
-                                        class="block w-full px-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                    <input id="mother" value="{{ $user->mother }}"
+                                        class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                         type="text" name="mother" placeholder="Last Name, Given Name Middle Name" />
-                                    <label for="mothercontact"
-                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-700">
+
+
+                                    <label for="mother_contact"
+                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
                                         Contact Number
                                     </label>
-                                    <input id="mothercontact"
-                                        class="block w-full px-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        type="text" name="mothercontact" />
+                                    <input id="mother_contact" value="{{ $user->mother_contact }}"
+                                        class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        type="text" name="mother_contact" />
                                 </div>
+
                                 <hr class="block w-1/2 my-2 border border-gray-500 " />
+
                                 <div class="flex flex-col items-center justify-between w-full px-2 ">
                                     <label for="father"
-                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-700">
+                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
                                         Father's Name
                                     </label>
-                                    <input id="father"
-                                        class="block w-full px-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        type="text" name="mother" placeholder="Last Name, Given Name Middle Name" />
-                                    <label for="fathercontact"
-                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-700">
+                                    <input id="father" value="{{ $user->father }}"
+                                        class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        type="text" name="father" placeholder="Last Name, Given Name Middle Name" />
+
+
+                                    <label for="father_contact"
+                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
                                         Contact Number
                                     </label>
-                                    <input id="fathercontact"
-                                        class="block w-full px-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        type="text" name="fathercontact" />
+                                    <input id="father_contact" value="{{ $user->father_contact }}"
+                                        class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        type="text" name="father_contact" />
                                 </div>
                             </fieldset>
+
+
+                            <div class="flex items-center justify-end w-full mt-4">
+                                <button type="submit"
+                                    class="inline-flex items-center px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-white uppercase transition bg-yellow-500 border border-yellow-500 rounded-lg hover:text-gray-900 hover:bg-white hover:border-yellow-500 active:bg-red focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
+                                    SUBMIT
+                                </button>
+                            </div>
                         </form>
                     </div>
 

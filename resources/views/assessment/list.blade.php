@@ -126,7 +126,8 @@
                                         12/27/2018
                                     </td>
                                     <td class="px-6 py-4 text-sm font-medium text-center whitespace-nowrap">
-                                        <a href="#" class="text-blue-600 hover:text-blue-900 hover:underline">View</a>
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgXxHaVLjQhQaeZOKVEQTx_zDZpkRwkMiawCNpK79l3Us_rQ/formResponse"
+                                            class="text-blue-600 hover:text-blue-900 hover:underline">View</a>
                                     </td>
                                 </tr>
                             </tbody>

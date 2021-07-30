@@ -73,5 +73,9 @@ class DepartmentSeeder extends Seeder
         Department::create([
             'name' => 'Department of Arts and Letters'
         ]);
+
+        Department::create([
+            'name' => 'Center for Guidance and Counseling'
+        ]);
     }
 }

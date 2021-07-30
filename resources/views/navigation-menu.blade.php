@@ -49,6 +49,9 @@
                             :active="request()->routeIs('departments.index')">
                             {{ __('Departments') }}
                         </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
+                            {{ __('Meet') }}
+                        </x-jet-nav-link>
                         <x-jet-nav-link href="{{ route('message') }}" :active="request()->routeIs('message')">
                             {{ __('Messages') }}
                         </x-jet-nav-link>
@@ -259,6 +262,9 @@
                 <x-jet-responsive-nav-link href="{{ route('departments.index') }}"
                     :active="request()->routeIs('departments.index')">
                     {{ __('Departments') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
+                    {{ __('Meet') }}
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('message') }}" :active="request()->routeIs('message')">
                     {{ __('Messages') }}

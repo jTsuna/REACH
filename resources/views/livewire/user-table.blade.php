@@ -254,7 +254,7 @@
                                 <div class="py-2">
                                     <x-jet-label for="role" value="{{ __('User Type') }}" />
                                     <select id="role" name="role_id"
-                                        class="block w-full mt-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        class="block w-full mt-1 border-2 border-yellow-400 shadow-sm rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                         @foreach ($roles as $role)
                                             <option name="role_id" value="{{ $role->id }}">{{ $role->name }}
                                             </option>
@@ -263,11 +263,11 @@
                                 </div>
 
                                 <div class="py-2">
-                                    <x-jet-label for="role" value="{{ __('Department') }}" />
-                                    <select id="role" name="role_id"
-                                        class="block w-full mt-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                    <x-jet-label for="department_id" value="{{ __('Department') }}" />
+                                    <select id="department_id" name="department_id"
+                                        class="block w-full mt-1 border-2 border-yellow-400 shadow-sm rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                         @foreach ($departments as $department)
-                                            <option name="role_id" value="{{ $department->id }}">
+                                            <option name="department_id" value="{{ $department->id }}">
                                                 {{ $department->name }}
                                             </option>
                                         @endforeach
