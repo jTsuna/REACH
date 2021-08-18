@@ -3,7 +3,7 @@
         @if (auth()->user()->role_id == 1)
             @livewire('user-table')
         @elseif(auth()->user()->role_id == 2)
-            @include('graph.index')
+            @livewire('user-table')
         @elseif(auth()->user()->role_id == 3)
             @include('graph.index')
         @elseif(auth()->user()->role_id == 4)

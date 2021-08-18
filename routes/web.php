@@ -22,6 +22,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         'users' => 'App\Http\Controllers\UserController',
         'assessments' => 'App\Http\Controllers\AssessmentController',
         'departments' => 'App\Http\Controllers\DepartmentController',
+        'needsanalysis' => 'App\Http\Controllers\NeedsAnalysisController',
+        'notes' => 'App\Http\Controllers\NoteController'
     ]);
 
     Route::get('/dashboard', function () {
@@ -44,10 +46,6 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         return view('studtable.index');
     })->name('studtable');
 
-    Route::get('/student-list', function () {
-        return view('studtable.note');
-    })->name('note');
-
     Route::get('/inbox', function () {
         return view('message.index');
     })->name('message');
@@ -68,10 +66,9 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         return view('assessment.list');
     })->name('list');
 
-    Route::get('/assessment-NeedsAnalysis', function () {
-        return view('assessment.needsanalysis');
-    })->name('needsanalysis');
-
+    Route::get('/needsanalysis-result', function () {
+        return view('graph.needsanalysisresults');
+    })->name('needsanalysisresult');
 
 
     Route::post('/file-upload', 'App\Http\Controllers\UserController@multipleUpload')->name('multipleupload');

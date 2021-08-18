@@ -161,7 +161,7 @@
                                                                 <x-jet-label for="role"
                                                                     value="{{ __('User Type') }}" />
                                                                 <select id="role" name="role_id"
-                                                                    class="block w-full mt-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                                                    class="block w-full mt-1 border-2 border-yellow-400 rounded-lg shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                                                     @foreach ($roles as $role)
                                                                         <option name="role_id"
                                                                             value="{{ $role->id }}">

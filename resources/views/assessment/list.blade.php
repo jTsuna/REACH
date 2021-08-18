@@ -79,7 +79,7 @@
                                         12/27/2018
                                     </td>
                                     <td class="px-6 py-4 text-sm font-medium text-center whitespace-nowrap">
-                                        <a href="{{ route('needsanalysis') }}"
+                                        <a href="{{ route('needsanalysis.index') }}"
                                             class="text-blue-600 hover:text-blue-900 hover:underline">View</a>
                                     </td>
                                 </tr>
