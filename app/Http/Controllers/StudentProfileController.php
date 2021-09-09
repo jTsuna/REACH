@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NeedsAnalysis;
+use App\Models\StudentProfile;
 use Illuminate\Http\Request;
 
-class NeedsAnalysisController extends Controller
+class StudentProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class NeedsAnalysisController extends Controller
      */
     public function index()
     {
-        return view('assessment.needsanalysis');
+        //
     }
 
     /**
@@ -34,28 +34,35 @@ class NeedsAnalysisController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        //
+    {
+        StudentProfile::create($request->all());
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\NeedsAnalysis  $needsAnalysis
+     * @param  \App\Models\StudentProfile  $studentProfile
      * @return \Illuminate\Http\Response
      */
-    public function show(NeedsAnalysis $needsAnalysis)
+    public function show($id)
     {
-        //
+        $studentProfile = StudentProfile::where('user_id', $id)->first();
+        if(is_null($studentProfile)){
+            $studentProfile = StudentProfile::create([
+                'user_id' => $id
+            ]);
+        }
+        return view('student.show', compact('studentProfile'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\NeedsAnalysis  $needsAnalysis
+     * @param  \App\Models\StudentProfile  $studentProfile
      * @return \Illuminate\Http\Response
      */
-    public function edit(NeedsAnalysis $needsAnalysis)
+    public function edit(StudentProfile $studentProfile)
     {
         //
     }
@@ -64,21 +71,23 @@ class NeedsAnalysisController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\NeedsAnalysis  $needsAnalysis
+     * @param  \App\Models\StudentProfile  $studentProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NeedsAnalysis $needsAnalysis)
+    public function update(Request $request, $id)
     {
-        //
+        $studentProfile = StudentProfile::where('user_id', $id)->first();
+        $studentProfile->fill($request->all())->save();
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\NeedsAnalysis  $needsAnalysis
+     * @param  \App\Models\StudentProfile  $studentProfile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(NeedsAnalysis $needsAnalysis)
+    public function destroy(StudentProfile $studentProfile)
     {
         //
     }

@@ -17,7 +17,7 @@
         </svg>
         <span class="text-xl font-bold tracking-widest text-gray-900">Message Counselor</span>
     </a>
-    <a href="{{ route('users.show', auth()->user()->id) }}"
+    <a href="{{ route('studentprofiles.show', auth()->user()->id) }}"
         class="flex flex-col items-center justify-center py-6 space-y-6 transition rounded-lg shadow-lg hover:animate-bounce delay-400 hover:bg-gray-200 bg-opacity-90">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-red-500 md:w-32 md:h-32" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">

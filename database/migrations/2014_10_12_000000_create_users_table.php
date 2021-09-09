@@ -22,15 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('idNum')->unique();
-            $table->string('program')->nullable();
             $table->rememberToken();
-            $table->integer('smartnum')->nullable();
-            $table->integer('non_smart_num')->nullable();
-            $table->string('mother')->nullable();
-            $table->integer('mother_contact')->nullable();
-            $table->string('father')->nullable();
-            $table->integer('father_contact')->nullable();
-            $table->string('link')->nullable();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
             $table->timestamps();

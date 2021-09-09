@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NeedsAnalysis;
+use App\Models\Need;
 use Illuminate\Http\Request;
 
-class NeedsAnalysisController extends Controller
+class NeedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class NeedsAnalysisController extends Controller
      */
     public function index()
     {
-        return view('assessment.needsanalysis');
+        //
     }
 
     /**
@@ -34,17 +34,24 @@ class NeedsAnalysisController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        //
+    {
+        foreach ($request->needs as $need){
+            Need::create([
+                'user_id' => auth()->user()->id,
+                'answer' => $need
+            ]);
+        }
+        dd($request->all());
+        return redirect()->route('dashboard');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\NeedsAnalysis  $needsAnalysis
+     * @param  \App\Models\Need  $need
      * @return \Illuminate\Http\Response
      */
-    public function show(NeedsAnalysis $needsAnalysis)
+    public function show(Need $need)
     {
         //
     }
@@ -52,10 +59,10 @@ class NeedsAnalysisController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\NeedsAnalysis  $needsAnalysis
+     * @param  \App\Models\Need  $need
      * @return \Illuminate\Http\Response
      */
-    public function edit(NeedsAnalysis $needsAnalysis)
+    public function edit(Need $need)
     {
         //
     }
@@ -64,10 +71,10 @@ class NeedsAnalysisController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\NeedsAnalysis  $needsAnalysis
+     * @param  \App\Models\Need  $need
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NeedsAnalysis $needsAnalysis)
+    public function update(Request $request, Need $need)
     {
         //
     }
@@ -75,10 +82,10 @@ class NeedsAnalysisController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\NeedsAnalysis  $needsAnalysis
+     * @param  \App\Models\Need  $need
      * @return \Illuminate\Http\Response
      */
-    public function destroy(NeedsAnalysis $needsAnalysis)
+    public function destroy(Need $need)
     {
         //
     }

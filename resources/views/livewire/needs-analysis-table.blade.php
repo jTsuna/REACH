@@ -7,7 +7,7 @@
         <div class="flex items-center justify-start">
             <span class="text-lg text-gray-800">Direction: Check all that applies.</span>
         </div>
-        <form method="post" action="" class="border border-black rounded-lg">
+        <form method="post" action="{{ route('needs.store') }}" class="border border-black rounded-lg">
             @csrf
             <fieldset id="needs" class="grid grid-cols-1 gap-4 p-3 rounded-lg md:grid-cols-3">
                 @foreach ($needsAnalyses as $needsAnalysis)

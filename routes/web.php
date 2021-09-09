@@ -23,7 +23,9 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         'assessments' => 'App\Http\Controllers\AssessmentController',
         'departments' => 'App\Http\Controllers\DepartmentController',
         'needsanalysis' => 'App\Http\Controllers\NeedsAnalysisController',
-        'notes' => 'App\Http\Controllers\NoteController'
+        'notes' => 'App\Http\Controllers\NoteController',
+        'studentprofiles' => 'App\Http\Controllers\StudentProfileController',
+        'needs' => 'App\Http\Controllers\NeedController'
     ]);
 
     Route::get('/dashboard', function () {
