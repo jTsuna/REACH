@@ -17,11 +17,13 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('role_id');
             $table->integer('department_id')->nullable();
+            $table->integer('profile_id')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('idNum')->unique();
+            $table->string('link')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();

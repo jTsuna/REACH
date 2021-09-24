@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Note;
-use App\Models\StudentProfile;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 
-class NoteController extends Controller
+class ChatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $studentProfile = StudentProfile::all();
-        return view('studtable.note', compact('studentProfile'));
+        //
     }
 
     /**
@@ -37,29 +35,27 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        Note::create($request->all());
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function show(Note $notes)
+    public function show(Chat $chat)
     {
-        $notes = Note::all();
-        return view('studtable.show', compact('notes'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Note $note)
+    public function edit(Chat $chat)
     {
         //
     }
@@ -68,24 +64,22 @@ class NoteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Note $note)
+    public function update(Request $request, Chat $chat)
     {
-        $note->fill($request->all())->save();
-        return back();  
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\Chat  $chat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Note $note)
+    public function destroy(Chat $chat)
     {
-        $note->delete();
-        return back();
+        //
     }
 }

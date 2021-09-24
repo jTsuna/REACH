@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\StudentProfile;
+use App\Models\ProgramList;
 use Illuminate\Http\Request;
 
 class StudentProfileController extends Controller
@@ -48,12 +49,13 @@ class StudentProfileController extends Controller
     public function show($id)
     {
         $studentProfile = StudentProfile::where('user_id', $id)->first();
+        $programs = ProgramList::all();
         if(is_null($studentProfile)){
             $studentProfile = StudentProfile::create([
                 'user_id' => $id
             ]);
         }
-        return view('student.show', compact('studentProfile'));
+        return view('student.show', compact('studentProfile', 'programs'));
     }
 
     /**

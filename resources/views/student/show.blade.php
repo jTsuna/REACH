@@ -16,10 +16,14 @@
                             <div class="flex flex-col justify-center py-4">
                                 <label for="program"
                                     class="block text-sm font-medium text-left text-gray-900">Program</label>
-                                <input id="program"
-                                    value="{{ is_null($studentProfile) ? null : $studentProfile->program }}"
-                                    class="block w-full border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                    type="text" name="program" />
+                                <select id="program_id" name="program_id"
+                                    class="block w-full mt-1 border-2 border-yellow-400 rounded-lg shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                    @foreach ($programs as $program)
+                                        <option name="program_id" value="{{ $program->id }}">
+                                            {{ $program->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
 
 

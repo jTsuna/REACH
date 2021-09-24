@@ -8,7 +8,7 @@ use App\Models\User;
 class MeetTable extends Component
 {
     public $users;
-    
+
 
     public function render(User $users)
     {

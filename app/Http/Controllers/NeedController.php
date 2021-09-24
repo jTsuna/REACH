@@ -41,7 +41,6 @@ class NeedController extends Controller
                 'answer' => $need
             ]);
         }
-        dd($request->all());
         return redirect()->route('dashboard');
     }
 

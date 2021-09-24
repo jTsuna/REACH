@@ -83,7 +83,7 @@
                                         {{ $departments->where('id', $user->department_id)->first()->name }}
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                        {{ $user->program }}
+                                        {{ $programs->where('id', $profiles->where('user_id', $user->id)->first()->program_id)->first()->name }}
                                     </td>
                                     <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
                                         <button onclick="toggleElement('show{{ $user->id }}')"

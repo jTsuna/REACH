@@ -45,9 +45,13 @@
                         <x-jet-nav-link href="{{ route('counselor') }}" :active="request()->routeIs('counselor')">
                             {{ __('Counselors') }}
                         </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('programs.index') }}"
+                            :active="request()->routeIs('programs.index')">
+                            {{ __('Program') }}
+                        </x-jet-nav-link>
                         <x-jet-nav-link href="{{ route('departments.index') }}"
                             :active="request()->routeIs('departments.index')">
-                            {{ __('Departments') }}
+                            {{ __('Department') }}
                         </x-jet-nav-link>
                         <x-jet-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
                             {{ __('Meet') }}
@@ -216,8 +220,8 @@
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
@@ -260,9 +264,13 @@
                 <x-jet-responsive-nav-link href="{{ route('counselor') }}" :active="request()->routeIs('counselor')">
                     {{ __('Counselors') }}
                 </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('programs.index') }}"
+                    :active="request()->routeIs('programs.index')">
+                    {{ __('Program') }}
+                </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('departments.index') }}"
                     :active="request()->routeIs('departments.index')">
-                    {{ __('Departments') }}
+                    {{ __('Department') }}
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
                     {{ __('Meet') }}

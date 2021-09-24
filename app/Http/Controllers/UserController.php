@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\StudentProfile;
 use Illuminate\Support\Facades\Hash;
 use App\Imports\UserImport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -55,8 +56,8 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        
-        return view('student.studentprofile', compact('user'));
+        $profiles = StudentProfile::all();
+        return view('student.studentprofile', compact('user', 'profiles'));
         
     }
 

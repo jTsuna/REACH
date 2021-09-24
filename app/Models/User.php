@@ -77,4 +77,8 @@ class User extends Authenticatable
     public function needs(){
         return $this->hasMany(Need::class);
     }
+
+    public function programs(){
+        return $this->hasOne(ProgramList::class);
+    }
 }

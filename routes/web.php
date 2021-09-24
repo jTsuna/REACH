@@ -25,7 +25,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         'needsanalysis' => 'App\Http\Controllers\NeedsAnalysisController',
         'notes' => 'App\Http\Controllers\NoteController',
         'studentprofiles' => 'App\Http\Controllers\StudentProfileController',
-        'needs' => 'App\Http\Controllers\NeedController'
+        'needs' => 'App\Http\Controllers\NeedController',
+        'programs' => 'App\Http\Controllers\ProgramListController'
     ]);
 
     Route::get('/dashboard', function () {
@@ -59,10 +60,6 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/counselor-archive', function () {
         return view('counselor.archive');
     })->name('archive');
-
-    Route::get('/daily-view', function () {
-        return view('calendar.daily');
-    })->name('daily');
 
     Route::get('/assessment-list', function () {
         return view('assessment.list');

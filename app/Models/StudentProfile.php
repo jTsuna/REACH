@@ -16,5 +16,8 @@ class StudentProfile extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function programList(){
+        return $this->hasOne(ProgramList::class);
+    }
     
 }

@@ -1,10 +1,4 @@
 <div>
-    <div class="flex flex-wrap justify-between my-2 space-x-6">
-        <div>
-            <input type="text" placeholder="Search.."
-                class="w-full p-2 border-2 border-yellow-400 appearance-none focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-xl" />
-        </div>
-    </div>
     <div class="flex flex-col pt-4">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">

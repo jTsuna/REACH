@@ -11,8 +11,9 @@ class NeedsanalysisResultsTable extends Component
 {
 
     public $needsAnalyses;
-    public $needs;
+    protected $needs;
     public $users;
+    public $needID = null;
 
     public function mount(NeedsAnalysis $needsAnalyses, Need $needs, User $users){
         $this->needsAnalyses = $needsAnalyses->all();
@@ -20,8 +21,17 @@ class NeedsanalysisResultsTable extends Component
         $this->users = $users->all();
     }
 
+    public function updateNeeds($needID)
+    {
+        //$this->resetPage();
+        $this->needID = $needID;
+    }
+
     public function render()
     {
-        return view('livewire.needsanalysis-results-table');
+        $this->needs = is_null($this->needID) ? Need::all() : Need::where('id', $this->needID)->get();
+        return view('livewire.needsanalysis-results-table',['users' => $this->users, 'needs' => $this->needs, 'needsAnalyses' => $this->needsAnalyses]);
     }
+
+    
 }

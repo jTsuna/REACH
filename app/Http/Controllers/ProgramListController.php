@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Note;
-use App\Models\StudentProfile;
+use App\Models\ProgramList;
 use Illuminate\Http\Request;
 
-class NoteController extends Controller
+class ProgramListController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $studentProfile = StudentProfile::all();
-        return view('studtable.note', compact('studentProfile'));
+        return view('department.programs');
     }
 
     /**
@@ -37,29 +35,27 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        Note::create($request->all());
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\ProgramList  $programList
      * @return \Illuminate\Http\Response
      */
-    public function show(Note $notes)
+    public function show(ProgramList $programList)
     {
-        $notes = Note::all();
-        return view('studtable.show', compact('notes'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\ProgramList  $programList
      * @return \Illuminate\Http\Response
      */
-    public function edit(Note $note)
+    public function edit(ProgramList $programList)
     {
         //
     }
@@ -68,24 +64,24 @@ class NoteController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\ProgramList  $programList
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Note $note)
+    public function update(Request $request, ProgramList $programList)
     {
-        $note->fill($request->all())->save();
-        return back();  
+        $programList->fill($request->all())->save();
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Note  $note
+     * @param  \App\Models\ProgramList  $programList
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Note $note)
+    public function destroy(ProgramList $programList)
     {
-        $note->delete();
+        $programList->delete();
         return back();
     }
 }
