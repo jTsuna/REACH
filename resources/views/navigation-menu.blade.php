@@ -32,13 +32,6 @@
                         <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                             {{ __('Home') }}
                         </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('assessments.index') }}"
-                            :active="request()->routeIs('assessments.index')">
-                            {{ __('Assessments') }}
-                        </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('calendar') }}" :active="request()->routeIs('calendar')">
-                            {{ __('Calendar') }}
-                        </x-jet-nav-link>
                         <x-jet-nav-link href="{{ route('studtable') }}" :active="request()->routeIs('studtable')">
                             {{ __('Students') }}
                         </x-jet-nav-link>
@@ -58,6 +51,13 @@
                         </x-jet-nav-link>
                         <x-jet-nav-link href="{{ route('message') }}" :active="request()->routeIs('message')">
                             {{ __('Messages') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('assessments.index') }}"
+                            :active="request()->routeIs('assessments.index')">
+                            {{ __('Assessments') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('calendar') }}" :active="request()->routeIs('calendar')">
+                            {{ __('Calendar') }}
                         </x-jet-nav-link>
 
                     @elseif(auth()->user()->role_id == 3)
@@ -251,13 +251,7 @@
                 <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Home') }}
                 </x-jet-responsive-nav-link>
-                <x-jet-nav-link href="{{ route('assessments.index') }}"
-                    :active="request()->routeIs('assessments.index')">
-                    {{ __('Assessments') }}
-                </x-jet-nav-link>
-                <x-jet-responsive-nav-link href="{{ route('calendar') }}" :active="request()->routeIs('calendar')">
-                    {{ __('Calendar') }}
-                </x-jet-responsive-nav-link>
+                
                 <x-jet-responsive-nav-link href="{{ route('studtable') }}" :active="request()->routeIs('studtable')">
                     {{ __('Students') }}
                 </x-jet-responsive-nav-link>
@@ -277,6 +271,13 @@
                 </x-jet-responsive-nav-link>
                 <x-jet-responsive-nav-link href="{{ route('message') }}" :active="request()->routeIs('message')">
                     {{ __('Messages') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-nav-link href="{{ route('assessments.index') }}"
+                    :active="request()->routeIs('assessments.index')">
+                    {{ __('Assessments') }}
+                </x-jet-nav-link>
+                <x-jet-responsive-nav-link href="{{ route('calendar') }}" :active="request()->routeIs('calendar')">
+                    {{ __('Calendar') }}
                 </x-jet-responsive-nav-link>
 
             @elseif(auth()->user()->role_id == 3)
