@@ -81,4 +81,9 @@ class User extends Authenticatable
     public function programs(){
         return $this->hasOne(ProgramList::class);
     }
+
+    public function chat()
+    {
+        return $this->hasMany('App\Models\Chat');
+    }
 }

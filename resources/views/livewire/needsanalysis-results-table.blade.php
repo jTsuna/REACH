@@ -11,7 +11,7 @@
                     <div class="grid grid-cols-1 gap-3">
                         @foreach ($needsAnalyses as $needsAnalysis)
                             <button wire:click.prevent="updateNeeds({{ $needsAnalysis->id }})"
-                                class="w-full p-1 -mt-2 text-sm font-bold text-gray-900 bg-yellow-200 border border-black rounded-md hover:bg-yellow-100 hover:text-gray-900">
+                                class="w-full p-1 -mt-2 text-sm font-bold text-gray-900 bg-yellow-200 border border-black rounded-md focus:bg-yellow-400 hover:bg-yellow-100 hover:text-gray-900">
                                 {{ $needsAnalysis->question }}
                             </button>
                         @endforeach

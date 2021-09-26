@@ -67,8 +67,10 @@ class ProgramListController extends Controller
      * @param  \App\Models\ProgramList  $programList
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProgramList $programList)
+    public function update(Request $request, $id)
     {
+        //dd($id);
+        $programList = ProgramList::findOrFail($id);
         $programList->fill($request->all())->save();
         return back();
     }

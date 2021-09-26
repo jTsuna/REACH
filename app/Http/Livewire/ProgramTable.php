@@ -9,10 +9,10 @@ use Livewire\Component;
 class ProgramTable extends Component
 {
     public $users;
-    public $programs;
+    public $programLists;
 
-    public function mount(ProgramList $programs){
-        $this->programs = $programs->all();
+    public function mount(ProgramList $programLists){
+        $this->programLists = $programLists->all();
     }
 
     public function render(User $users)

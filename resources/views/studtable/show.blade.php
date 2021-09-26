@@ -17,7 +17,7 @@
                 <div class="grid w-full grid-cols-1 gap-2 md:grid-cols-4 md:gap-4">
                     @foreach ($notes as $note)
                         <div
-                            class="flex flex-col items-center justify-center p-2 bg-blue-500 border border-gray-600 rounded-lg">
+                            class="flex flex-col items-center justify-center p-2  border border-gray-600 rounded-lg {{$note->severity == 0 ? 'bg-gray-600' : ($note->severity == 1 ? 'bg-blue-500' : ($note->severity == 2 ? 'bg-green-400' : ($note->severity == 3 ? 'bg-yellow-300' : ($note->severity == 4 ? 'bg-yellow-600' : 'bg-red-600'))))}}">
                             <div class="flex items-center justify-between w-full border-b border-white">
                                 <span class="text-sm font-semibold tracking-widest text-white">
                                     {{ $note->updated_at }}
@@ -28,7 +28,7 @@
                                             @csrf
                                             @method('delete')
                                             <button type="submit"
-                                                class="text-red-600 hover:text-red-400 focus:outline-none">
+                                                class="text-black focus:outline-none">
                                                 <i class="far fa-trash-alt"></i>
                                             </button>
                                         </form>
@@ -41,11 +41,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <h4 class="flex items-center justify-center w-full mt-4 font-bold text-white">
+                            <h4 class="flex items-center justify-center w-full mt-4 font-bold text-gray-900">
                                 {{ $note->title }}
                             </h4>
                             <div class="flex items-center justify-center w-full mt-4">
-                                <span class="text-left text-white">
+                                <span class="text-left text-gray-900">
                                     {{ $note->description }}
                                 </span>
                             </div>
@@ -99,6 +99,20 @@
                                                             required>{{ $note->description }}</textarea>
                                                     </div>
 
+                                                    <div class="py-2 ">
+                                                        <x-jet-label for="severity" value="{{ __('Severity') }}" />
+                                                        <select id="severity"
+                                                            class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
+                                                            name="severity" required>
+                                                            <option value="1">Open</option>
+                                                            <option value="2">On-Going</option>
+                                                            <option value="3">High</option>
+                                                            <option value="4">Urgent</option>
+                                                            <option value="5">Critical</option>
+                                                            <option value="0">Close</option>
+                                                        </select>
+                                                    </div>
+                                                    
                                                     <div class="flex items-center justify-center mt-4">
                                                         <button
                                                             class="inline-flex items-center justify-center w-full px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-white uppercase transition bg-red-500 border border-red-500 rounded-lg hover:bg-red-800 hover:border-red-400 active:bg-black focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
@@ -159,6 +173,20 @@
                                     <textarea id="description"
                                         class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
                                         name="description" required></textarea>
+                                </div>
+
+                                <div class="py-2 ">
+                                    <x-jet-label for="severity" value="{{ __('Severity') }}" />
+                                    <select id="severity"
+                                        class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
+                                        name="severity" required>
+                                        <option value="1">Open</option>
+                                        <option value="2">On-Going</option>
+                                        <option value="3">High</option>
+                                        <option value="4">Urgent</option>
+                                        <option value="5">Critical</option>
+                                        <option value="0">Close</option>
+                                    </select>
                                 </div>
 
                                 <div class="flex items-center justify-center mt-4">

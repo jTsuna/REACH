@@ -49,10 +49,10 @@
                             :active="request()->routeIs('programs.index')">
                             {{ __('Program') }}
                         </x-jet-nav-link>
-                        <x-jet-nav-link href="{{ route('departments.index') }}"
+                        {{-- <x-jet-nav-link href="{{ route('departments.index') }}"
                             :active="request()->routeIs('departments.index')">
                             {{ __('Department') }}
-                        </x-jet-nav-link>
+                        </x-jet-nav-link> --}}
                         <x-jet-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
                             {{ __('Meet') }}
                         </x-jet-nav-link>
@@ -268,10 +268,10 @@
                     :active="request()->routeIs('programs.index')">
                     {{ __('Program') }}
                 </x-jet-responsive-nav-link>
-                <x-jet-responsive-nav-link href="{{ route('departments.index') }}"
+                {{-- <x-jet-responsive-nav-link href="{{ route('departments.index') }}"
                     :active="request()->routeIs('departments.index')">
                     {{ __('Department') }}
-                </x-jet-responsive-nav-link>
+                </x-jet-responsive-nav-link> --}}
                 <x-jet-responsive-nav-link href="{{ route('meet') }}" :active="request()->routeIs('meet')">
                     {{ __('Meet') }}
                 </x-jet-responsive-nav-link>

@@ -160,58 +160,6 @@
             <!-- /Modal -->
         </div>
 
-        <div id="request" class="fixed inset-0 z-10 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog"
-            aria-modal="true">
-            <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-                <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" aria-hidden="true"></div>
-                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-                <div
-                    class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                    <div class="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
-                        <div class="mb-6 space-x-10 sm:flex sm:items-start">
-                            <button onclick="toggleElement('request')"
-                                class="flex items-center justify-center flex-shrink-0 w-12 h-12 mx-auto focus:outline-none sm:mx-0 sm:h-10 sm:w-10">
-                                <!-- Heroicon name: outline/exclamation -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-900"
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="flex items-center justify-center">
-                            <h2 class="text-xl font-bold text-gray-900">Concern</h2>
-                        </div>
-                        <div>
-                            <x-jet-validation-errors class="mb-4" />
-
-                            <form method="POST" action="">
-
-                                <div>
-                                    <select id="role" name="role_id"
-                                        class="block w-full px-1 py-2 mt-1 border border-gray-500 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                        <option name="role_id" value="1">Family Problem</option>
-                                        <option name="role_id" value="2">Academic Problem</option>
-                                        <option name="role_id" value="2">Inability to Understand</option>
-                                        <option name="role_id" value="2">Fear of the Opposite Gender</option>
-                                        <option name="role_id" value="2">Identity Crisis</option>
-                                    </select>
-                                </div>
-
-                                <div class="flex items-center justify-end mt-4">
-                                    <button
-                                        class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-gray-900 uppercase transition border border-black rounded-lg hover:bg-black hover:text-white focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25">
-                                        Request
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <script>
             const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
                 'October', 'November', 'December'

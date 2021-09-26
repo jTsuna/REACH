@@ -19,7 +19,8 @@
                                 <select id="program_id" name="program_id"
                                     class="block w-full mt-1 border-2 border-yellow-400 rounded-lg shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                     @foreach ($programs as $program)
-                                        <option name="program_id" value="{{ $program->id }}">
+                                        <option name="program_id" value="{{ $program->id }}"
+                                            {{ $studentProfile->program_id == $program->id ? ' selected' : '' }}>
                                             {{ $program->name }}
                                         </option>
                                     @endforeach

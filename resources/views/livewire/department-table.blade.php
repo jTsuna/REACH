@@ -96,9 +96,9 @@
                                                                     <x-jet-input id="grad_tracer"
                                                                         class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
                                                                         type="text" name="grad_tracer"
-                                                                        value="{{ $department->grad_tracer }}"
-                                                                        required />
+                                                                        value="{{ $department->grad_tracer }}" />
                                                                 </div>
+                                                                
                                                                 <div class="flex items-center justify-center mt-4">
                                                                     <button type="submit"
                                                                         class="inline-flex items-center justify-center w-full px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-white uppercase transition bg-red-500 border border-red-500 rounded-lg hover:bg-red-800 hover:border-red-400 active:bg-black focus:outline-none focus:border-red-900 focus:ring focus:ring-red-300 disabled:opacity-25">
