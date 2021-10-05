@@ -15,11 +15,19 @@ class NeedsAnalysisSeeder extends Seeder
     public function run()
     {
         NeedsAnalysis::create([
-            'question' => 'Weight Problem'
+            'question' => 'Weight problem'
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Too Little Time for Recreation'
+            'question' => 'Height problem'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Poor complexion/Skin trouble'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Poor posture'
         ]);
 
         NeedsAnalysis::create([
@@ -27,7 +35,27 @@ class NeedsAnalysisSeeder extends Seeder
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Height Problem'
+            'question' => 'Weak Eyes'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Hearing difficulty'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Oral communication skills'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Coping with academic pressures'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Fear of the opposite sex'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Too little time for recreation'
         ]);
 
         NeedsAnalysis::create([
@@ -35,39 +63,15 @@ class NeedsAnalysisSeeder extends Seeder
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Weak Eyes'
-        ]);
-
-        NeedsAnalysis::create([
-            'question' => 'Poor Body Complexion'
-        ]);
-
-        NeedsAnalysis::create([
             'question' => 'Inferiority Complex'
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Hearing Difficulty'
+            'question' => 'Difficulty in making decisions'
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Poor Posture'
-        ]);
-
-        NeedsAnalysis::create([
-            'question' => 'Difficulty in Making Decision'
-        ]);
-
-        NeedsAnalysis::create([
-            'question' => 'Too Easily Discourage'
-        ]);
-
-        NeedsAnalysis::create([
-            'question' => 'Oral Communication Skills'
-        ]);
-
-        NeedsAnalysis::create([
-            'question' => 'Difficulty in Making Friends'
+            'question' => 'Difficulty in making friends'
         ]);
 
         NeedsAnalysis::create([
@@ -75,27 +79,159 @@ class NeedsAnalysisSeeder extends Seeder
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Coping with Academic Pressures'
-        ]);
-
-        NeedsAnalysis::create([
-            'question' => 'Too Easily Led By Other People'
-        ]);
-
-        NeedsAnalysis::create([
             'question' => 'Immature/Childish'
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Fear of Opposite Sex'
+            'question' => 'Too easily discouraged'
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Family Problem'
+            'question' => 'Too easily led by other people'
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Financial Problem'
+            'question' => 'Controlling sex urges'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Indulging in billiards'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Indulging in computer games'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Indulging in drinking'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Indulging in drugs'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Indulging in gambling'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Indulging in smoking'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Easily looses temper'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Lacking self-control'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Easily gets worried'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Easily gets nervous'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Shy/Timid'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Misunderstanding with mother'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Misunderstanding with father'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Parents Separated/divorced'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Relatives interfering with family affairs'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Brothers/sisters rivalry'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Disappointment in love affair'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Girlfriend/Boyfriend'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Coping with faculty standards'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Financial Matters'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Not interested in the course'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Not interested in the course'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Study habits'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Habitual Absences'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Tardiness'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Getting low grades'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Coping with academic problems (Chemistry)'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Coping with academic problems (English)'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Coping with academic problems (Math)'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Coping with academic problems (Physics)'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Coping with academic problems (Others)'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Time management'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Inhibited to talk about own feelings'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Jealousy'
+        ]);
+
+        NeedsAnalysis::create([
+            'question' => 'Loneliness'
         ]);
     }
 }

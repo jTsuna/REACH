@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'role_id' => 1,
             'name' => 'Admin',
             'email' => 'admin@reach.com',
-            'password' => Hash::make('ngb6002'),
+            'password' => Hash::make('123456'),
             'idNum' => 1234567890
         ]);
 
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
             'role_id' => 2,
             'name' => 'Head Counselor',
             'email' => 'hcounselor@reach.com',
-            'password' => Hash::make('ngb6002'),
+            'password' => Hash::make('123456'),
             'idNum' => 1234567891
         ]);
 
@@ -35,13 +35,14 @@ class UserSeeder extends Seeder
             'role_id' => 3,
             'name' => 'Counselor',
             'email' => 'counselor@reach.com',
-            'password' => Hash::make('ngb6002'),
+            'password' => Hash::make('123456'),
             'idNum' => 1234567892
         ]);
 
         User::create([
             'role_id' => 4,
             'department_id' => 14,
+            'program_id'=> 3,
             'name' => 'Albert John Labayan',
             'email' => 'labayanalbert@gmail.com',
             'password' => Hash::make('123456'),

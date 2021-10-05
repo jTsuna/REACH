@@ -13,20 +13,6 @@
                         <form method="post" action="{{ route('studentprofiles.update', auth()->user()->id) }}">
                             @method('patch')
                             @csrf
-                            <div class="flex flex-col justify-center py-4">
-                                <label for="program"
-                                    class="block text-sm font-medium text-left text-gray-900">Program</label>
-                                <select id="program_id" name="program_id"
-                                    class="block w-full mt-1 border-2 border-yellow-400 rounded-lg shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                    @foreach ($programs as $program)
-                                        <option name="program_id" value="{{ $program->id }}"
-                                            {{ $studentProfile->program_id == $program->id ? ' selected' : '' }}>
-                                            {{ $program->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-
 
                             <fieldset
                                 class="flex items-center justify-center w-full p-2 space-x-6 border border-gray-900 rounded-md">
@@ -59,16 +45,33 @@
                                 class="flex flex-col items-center justify-center w-full p-2 mt-2 space-x-6 border border-gray-900 rounded-md">
                                 <legend class="text-sm tracking-widest uppercase">Parent Contact Information
                                 </legend>
+                                {{-- mother --}}
                                 <div class="flex flex-col items-center justify-between w-full px-2">
-                                    <label for="mother"
-                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
-                                        Mother's Name
-                                    </label>
-                                    <input id="mother"
-                                        value="{{ is_null($studentProfile) ? null : $studentProfile->mother }}"
-                                        class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        type="text" name="mother" placeholder="Last Name, Given Name Middle Name" />
 
+                                    <div class="flex justify-between w-full">
+                                        <div class="flex flex-col w-5/6 mr-2">
+                                            <label for="mother"
+                                                class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                                Mother's Name
+                                            </label>
+                                            <input id="mother"
+                                                value="{{ is_null($studentProfile) ? null : $studentProfile->mother }}"
+                                                class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                type="text" name="mother"
+                                                placeholder="Last Name, Given Name Middle Name" />
+                                        </div>
+
+                                        <div class="flex flex-col w-1/6">
+                                            <label for="mother_age"
+                                                class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                                Age
+                                            </label>
+                                            <input id="mother_age"
+                                                value="{{ is_null($studentProfile) ? null : $studentProfile->mother_age }}"
+                                                class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                type="number" name="mother_age" />
+                                        </div>
+                                    </div>
 
                                     <label for="mother_contact"
                                         class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
@@ -78,20 +81,70 @@
                                         value="{{ is_null($studentProfile) ? null : $studentProfile->mother_contact }}"
                                         class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                         type="text" name="mother_contact" />
+
+                                    <div class="flex justify-between w-full">
+                                        <div class="flex flex-col w-1/2 mr-2">
+                                            <label for="mother_occupation"
+                                                class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                                Occupation
+                                            </label>
+                                            <input id="mother_occupation"
+                                                value="{{ is_null($studentProfile) ? null : $studentProfile->mother_occupation }}"
+                                                class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                type="text" name="mother_occupation" />
+                                        </div>
+
+                                        <div class="flex flex-col w-1/2">
+                                            <label for="mother_company"
+                                                class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                                Company
+                                            </label>
+                                            <input id="mother_company"
+                                                value="{{ is_null($studentProfile) ? null : $studentProfile->mother_company }}"
+                                                class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                type="text" name="mother_company" />
+                                        </div>
+                                    </div>
+
+                                    <label for="motherCompany_address"
+                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                        Company Address
+                                    </label>
+                                    <input id="motherCompany_address"
+                                        value="{{ is_null($studentProfile) ? null : $studentProfile->motherCompany_address }}"
+                                        class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        type="text" name="motherCompany_address" />
+
                                 </div>
 
-                                <hr class="block w-1/2 my-2 border border-gray-500 " />
+                                <hr class="block w-1/2 my-2 border border-gray-400 " />
+                                {{-- father --}}
+                                <div class="flex flex-col items-center justify-between w-full px-2">
 
-                                <div class="flex flex-col items-center justify-between w-full px-2 ">
-                                    <label for="father"
-                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
-                                        Father's Name
-                                    </label>
-                                    <input id="father"
-                                        value="{{ is_null($studentProfile) ? null : $studentProfile->father }}"
-                                        class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                        type="text" name="father" placeholder="Last Name, Given Name Middle Name" />
+                                    <div class="flex justify-between w-full">
+                                        <div class="flex flex-col w-5/6 mr-2">
+                                            <label for="father"
+                                                class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                                Father's Name
+                                            </label>
+                                            <input id="father"
+                                                value="{{ is_null($studentProfile) ? null : $studentProfile->father }}"
+                                                class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                type="text" name="father"
+                                                placeholder="Last Name, Given Name Middle Name" />
+                                        </div>
 
+                                        <div class="flex flex-col w-1/6">
+                                            <label for="father_age"
+                                                class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                                Age
+                                            </label>
+                                            <input id="father_age"
+                                                value="{{ is_null($studentProfile) ? null : $studentProfile->father_age }}"
+                                                class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                type="number" name="father_age" />
+                                        </div>
+                                    </div>
 
                                     <label for="father_contact"
                                         class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
@@ -101,6 +154,40 @@
                                         value="{{ is_null($studentProfile) ? null : $studentProfile->father_contact }}"
                                         class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                         type="text" name="father_contact" />
+
+                                    <div class="flex justify-between w-full">
+                                        <div class="flex flex-col w-1/2 mr-2">
+                                            <label for="father_occupation"
+                                                class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                                Occupation
+                                            </label>
+                                            <input id="father_occupation"
+                                                value="{{ is_null($studentProfile) ? null : $studentProfile->father_occupation }}"
+                                                class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                type="text" name="father_occupation" />
+                                        </div>
+
+                                        <div class="flex flex-col w-1/2">
+                                            <label for="father_company"
+                                                class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                                Company
+                                            </label>
+                                            <input id="father_company"
+                                                value="{{ is_null($studentProfile) ? null : $studentProfile->father_company }}"
+                                                class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                type="text" name="father_company" />
+                                        </div>
+                                    </div>
+
+                                    <label for="fatherCompany_address"
+                                        class="flex items-center justify-start w-full text-sm font-medium text-gray-900">
+                                        Company Address
+                                    </label>
+                                    <input id="fatherCompany_address"
+                                        value="{{ is_null($studentProfile) ? null : $studentProfile->fatherCompany_address }}"
+                                        class="block w-full px-1 border border-yellow-400 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        type="text" name="fatherCompany_address" />
+
                                 </div>
                             </fieldset>
 
