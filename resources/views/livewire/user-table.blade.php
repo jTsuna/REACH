@@ -275,6 +275,18 @@
                                 </div>
 
                                 <div class="py-2">
+                                    <x-jet-label for="department_id" value="{{ __('Program') }}" />
+                                    <select id="department_id" name="department_id"
+                                        class="block w-full mt-1 border-2 border-yellow-400 shadow-sm rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                        @foreach ($programs as $program)
+                                            <option name="program_id" value="{{ $program->id }}">
+                                                {{ $program->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="py-2">
                                     <x-jet-label for="idnum" value="{{ __('ID Number') }}" />
                                     <x-jet-input id="idnum"
                                         class="w-full p-2 border-2 border-yellow-400 appearance-none rounded-xl"
