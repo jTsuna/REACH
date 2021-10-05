@@ -275,8 +275,8 @@
                                 </div>
 
                                 <div class="py-2">
-                                    <x-jet-label for="department_id" value="{{ __('Program') }}" />
-                                    <select id="department_id" name="department_id"
+                                    <x-jet-label for="program_id" value="{{ __('Program') }}" />
+                                    <select id="program_id" name="program_id"
                                         class="block w-full mt-1 border-2 border-yellow-400 shadow-sm rounded-xl focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                         @foreach ($programs as $program)
                                             <option name="program_id" value="{{ $program->id }}">
