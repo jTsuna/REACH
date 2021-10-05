@@ -61,16 +61,14 @@
                                         {{ $departments->where('id', $user->department_id)->first()->name }}
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                        
-                                            {{ $programs->where('id', $profiles->where('user_id', $user->id)->first()->program_id)->first()->name }}
-                                        
-                            </td>
-                            <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
-                                <a href="{{ route('notes.show', $user->id) }}"
-                                    class="text-green-600 hover:text-green-900">View
-                                    Notes</a>
-                            </td>
-                            </tr>
+                                        {{ $programs->where('id', $user->program_id)->first()->name }}
+                                    </td>
+                                    <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
+                                        <a href="{{ route('notes.show', $user->id) }}"
+                                            class="text-green-600 hover:text-green-900">View
+                                            Notes</a>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>

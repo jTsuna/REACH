@@ -62,7 +62,7 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 text-sm font-medium text-center whitespace-nowrap">
-                                        <a href="{{$programList->link}}"
+                                        <a href="{{ is_null($programs) ? null : $programs->link }}"
                                             class="text-blue-600 hover:text-blue-900 hover:underline">View</a>
                                     </td>
 

@@ -14,6 +14,20 @@
                             @method('patch')
                             @csrf
 
+                            <div class="flex flex-col justify-center py-4">
+                                <label for="program"
+                                    class="block text-sm font-medium text-left text-gray-900">Program</label>
+                                <select id="program_id" name="program_id"
+                                    class="block w-full mt-1 border-2 border-yellow-400 rounded-lg shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                                    @foreach ($programs as $program)
+                                        <option name="program_id" value="{{ $program->id }}"
+                                            {{ $studentProfile->program_id == $program->id ? ' selected' : '' }}>
+                                            {{ $program->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             <fieldset
                                 class="flex items-center justify-center w-full p-2 space-x-6 border border-gray-900 rounded-md">
                                 <legend class="text-sm tracking-widest uppercase">Personal Contact Information

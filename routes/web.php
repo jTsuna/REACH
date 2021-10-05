@@ -62,9 +62,9 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     })->name('archive');
 
     Route::get('/assessment-list', function () {
-        $programList = App\Models\ProgramList::where('id', App\Models\StudentProfile::where('user_id', auth()->user()->id)->first()->program_id)->first();
+        $programs = App\Models\ProgramList::where('id', App\Models\StudentProfile::where('user_id', auth()->user()->id)->first()->program_id)->first();
         //dd(auth()->user()->id);
-        return view('assessment.list', compact('programList'));
+        return view('assessment.list', compact('programs'));
     })->name('list');
 
     Route::get('/needsanalysis-result', function () {

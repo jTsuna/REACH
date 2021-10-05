@@ -1,6 +1,6 @@
 <div>
     <div
-        class="flex flex-col justify-center p-3 mt-20 bg-white shadow-lg md:p-6 md:rounded-lg md:mx-20 lg:mt-32 lg:mx-36 bg-opacity-90">
+        class="flex flex-col justify-center p-3 mt-20 bg-white shadow-lg md:p-6 md:rounded-lg md:mx-20 lg:mt-20 lg:mx-36 bg-opacity-90">
         <div class="flex items-center justify-start my-6">
             <span class="text-2xl font-bold text-gray-900">Needs Analysis</span>
         </div>
@@ -9,7 +9,7 @@
         </div>
         <form method="post" action="{{ route('needs.store') }}" class="border border-black rounded-lg">
             @csrf
-            <fieldset id="needs" class="grid grid-cols-1 gap-4 p-3 rounded-lg md:grid-cols-3">
+            <fieldset id="needs" class="grid grid-cols-1 gap-4 p-3 rounded-lg md:grid-cols-4">
                 @foreach ($needsAnalyses as $needsAnalysis)
                     <div class="flex items-center justify-start space-x-2">
                         <input name="needs[]" type="checkbox" value="{{ $needsAnalysis->id }}">
