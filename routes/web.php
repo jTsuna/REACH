@@ -71,6 +71,9 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         return view('graph.needsanalysisresults');
     })->name('needsanalysisresult');
 
+    Route::get('/view-online-family-survey', function () {
+        return view('student.show');
+    })->name('onlinesurvey');
 
     Route::post('/file-upload', 'App\Http\Controllers\UserController@multipleUpload')->name('multipleupload');
 

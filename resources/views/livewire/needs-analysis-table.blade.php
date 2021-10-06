@@ -17,17 +17,29 @@
                     </div>
                 @endforeach
             </fieldset>
-
-            <div class="flex items-center justify-end m-4 space-x-4">
-                <button type="submit"
-                    class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition bg-yellow-400 border border-yellow-500 rounded-lg hover:bg-white hover:text-gray-900 hover:border-yellow-500 focus:outline-none focus:border-yellow-400 focus:ring focus:ring-yellow-300 disabled:opacity-25">
-                    Submit
-                </button>
-                <a href="{{ route('list') }}"
-                    class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition bg-red-600 border border-red-700 rounded-lg hover:bg-white hover:text-gray-900 hover:border-red-500 focus:outline-none focus:border-red-600 focus:ring focus:ring-red-700 disabled:opacity-25">
-                    Return
-                </a>
-            </div>
+            @if (auth()->user()->role_id == 4)
+                <div class="flex items-center justify-end m-4 space-x-4">
+                    <button type="submit"
+                        class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition bg-yellow-400 border border-yellow-500 rounded-lg hover:bg-white hover:text-gray-900 hover:border-yellow-500 focus:outline-none focus:border-yellow-400 focus:ring focus:ring-yellow-300 disabled:opacity-25">
+                        Submit
+                    </button>
+                    <a href="{{ route('list') }}"
+                        class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition bg-red-600 border border-red-700 rounded-lg hover:bg-white hover:text-gray-900 hover:border-red-500 focus:outline-none focus:border-red-600 focus:ring focus:ring-red-700 disabled:opacity-25">
+                        Return
+                    </a>
+                </div>
+            @elseif(auth()->user()->role_id == 2)
+                <div class="hidden">
+                    <button type="submit"
+                        class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition bg-yellow-400 border border-yellow-500 rounded-lg hover:bg-white hover:text-gray-900 hover:border-yellow-500 focus:outline-none focus:border-yellow-400 focus:ring focus:ring-yellow-300 disabled:opacity-25">
+                        Submit
+                    </button>
+                    <a href="{{ route('list') }}"
+                        class="inline-flex items-center px-4 py-2 ml-4 text-xs font-semibold tracking-widest text-white uppercase transition bg-red-600 border border-red-700 rounded-lg hover:bg-white hover:text-gray-900 hover:border-red-500 focus:outline-none focus:border-red-600 focus:ring focus:ring-red-700 disabled:opacity-25">
+                        Return
+                    </a>
+                </div>
+            @endif
         </form>
     </div>
 </div>

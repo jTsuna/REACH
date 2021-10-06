@@ -15,6 +15,9 @@
                                     class="px-6 py-3 text-xs font-bold tracking-wider text-left text-gray-900 uppercase">
                                     Type of Assessment
                                 </th>
+                                <th scope="col" class="relative px-6 py-3">
+                                    <span class="sr-only">View</span>
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -29,9 +32,24 @@
                                             </div>
                                         </div>
                                     </td>
+                                    @if ($assessment->id == 1)
+                                        <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
+                                            <a href="{{ route('needsanalysis.index') }}"
+                                                class="text-blue-600 hover:text-blue-300">View</a>
+                                        </td>
+                                    @elseif($assessment->id == 2)
+                                        <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
+                                            <a href="{{ route('onlinesurvey') }}"
+                                                class="text-blue-600 hover:text-blue-300">View</a>
+                                        </td>
+                                    @elseif($assessment->id == 3)
+                                        <td class="px-6 py-4 font-medium text-right text-md whitespace-nowrap">
+                                            <span class="sr-only">View</span>
+                                        </td>
+                                    @endif
                                 </tr>
+                            @endforeach
                         </tbody>
-                        @endforeach
                     </table>
                 </div>
             </div>
