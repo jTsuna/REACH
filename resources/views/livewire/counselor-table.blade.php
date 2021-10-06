@@ -1,22 +1,29 @@
 <div>
-    <div class="flex flex-col flex-wrap justify-between my-2 space-y-2 md:space-x-6 md:flex-row">
-        <div class="relative py-2">
-            <a href="{{ route('archive') }}"
-                class="inline-flex items-center justify-center w-full px-4 py-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg md:w-auto hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
-                View All
-            </a>
-        </div>
+    <div class="flex items-center justify-between w-full">
         <div>
+            <span class="text-4xl font-bold text-gray-900">Counselors</span>
+        </div>
+
+        {{-- <div class="flex items-center justify-center space-x-6">
             <button onclick="toggleElement('create')"
-                class="inline-flex items-center justify-center w-full px-4 py-2 space-x-2 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg md:w-auto hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                class="inline-flex items-center justify-center w-full px-4 py-2 space-x-3 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg md:w-auto hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Add Counselor
+                <span>Add Student</span>
             </button>
-        </div>
+            <button onclick="toggleElement('file')"
+                class="inline-flex items-center justify-center w-full px-4 py-2 space-x-3 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg md:w-auto hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                </svg>
+                <span>Upload File</span>
+            </button>
+        </div> --}}
     </div>
     <div class="flex flex-col pt-4">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
