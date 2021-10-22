@@ -26,7 +26,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         'notes' => 'App\Http\Controllers\NoteController',
         'studentprofiles' => 'App\Http\Controllers\StudentProfileController',
         'needs' => 'App\Http\Controllers\NeedController',
-        'programs' => 'App\Http\Controllers\ProgramListController'
+        'programs' => 'App\Http\Controllers\ProgramListController',
+        'gradsurveys' => 'App\Http\Controllers\GradSurveyController'
     ]);
 
     Route::get('/dashboard', function () {
@@ -76,5 +77,7 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     })->name('onlinesurvey');
 
     Route::post('/file-upload', 'App\Http\Controllers\UserController@multipleUpload')->name('multipleupload');
+
+    Route::post('/grad-survey-upload', 'App\Http\Controllers\GradSurveyController@gradSurveyUpload')->name('gradsurveyupload');
 
 });

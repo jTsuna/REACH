@@ -11,11 +11,17 @@ class CreateNeedsAnalysesTable extends Migration
      *
      * @return void
      */
+
+    // 1 = red
+    // 2 = blue
+    // 3 = green
+    // 4 = yellow
     public function up()
     {
         Schema::create('needs_analyses', function (Blueprint $table) {
             $table->id();
             $table->string('question');
+            $table->integer('category_id');
             $table->timestamps();
         });
     }

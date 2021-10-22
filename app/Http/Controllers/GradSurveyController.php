@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Need;
+use App\Models\GradSurvey;
+use App\Imports\GradSurveyImport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
-class NeedController extends Controller
+class GradSurveyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,7 @@ class NeedController extends Controller
      */
     public function index()
     {
-        return view('graph.show');
+        return view('graph.gradsurvey');
     }
 
     /**
@@ -35,22 +37,18 @@ class NeedController extends Controller
      */
     public function store(Request $request)
     {
-        foreach ($request->needs as $need){
-            Need::create([
-                'user_id' => auth()->user()->id,
-                'answer' => $need
-            ]);
-        }
-        return redirect()->route('dashboard');
+        //
+        $survey = GradSurvey::create($request->all());
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Need  $need
+     * @param  \App\Models\GradSurvey  $gradSurvey
      * @return \Illuminate\Http\Response
      */
-    public function show(Need $need)
+    public function show(GradSurvey $gradSurvey)
     {
         //
     }
@@ -58,10 +56,10 @@ class NeedController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Need  $need
+     * @param  \App\Models\GradSurvey  $gradSurvey
      * @return \Illuminate\Http\Response
      */
-    public function edit(Need $need)
+    public function edit(GradSurvey $gradSurvey)
     {
         //
     }
@@ -70,10 +68,10 @@ class NeedController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Need  $need
+     * @param  \App\Models\GradSurvey  $gradSurvey
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Need $need)
+    public function update(Request $request, GradSurvey $gradSurvey)
     {
         //
     }
@@ -81,11 +79,16 @@ class NeedController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Need  $need
+     * @param  \App\Models\GradSurvey  $gradSurvey
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Need $need)
+    public function destroy(GradSurvey $gradSurvey)
     {
         //
+    }
+
+    public function gradSurveyUpload(Request $request){
+        Excel::import(new GradSurveyImport(), $request->file('file'));
+        return back();
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\NeedsAnalysis;
 use App\Models\Need;
 use App\Models\User;
+use App\Models\ProgramList;
 use Livewire\Component;
 
 class NeedsanalysisResultsTable extends Component

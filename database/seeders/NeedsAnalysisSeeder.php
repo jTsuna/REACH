@@ -15,223 +15,278 @@ class NeedsAnalysisSeeder extends Seeder
     public function run()
     {
         NeedsAnalysis::create([
-            'question' => 'Weight problem'
+            'question' => 'Weight problem',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Height problem'
+            'question' => 'Height problem',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Poor complexion/Skin trouble'
+            'question' => 'Poor complexion/Skin trouble',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Poor posture'
+            'question' => 'Poor posture',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Sickly'
+            'question' => 'Sickly',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Weak Eyes'
+            'question' => 'Weak Eyes',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Hearing difficulty'
+            'question' => 'Hearing difficulty',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Oral communication skills'
+            'question' => 'Oral communication skills',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Coping with academic pressures'
+            'question' => 'Coping with academic pressures',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Fear of the opposite sex'
+            'question' => 'Fear of the opposite sex',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Too little time for recreation'
+            'question' => 'Too little time for recreation',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Inability to understand'
+            'question' => 'Inability to understand',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Inferiority Complex'
+            'question' => 'Inferiority Complex',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Difficulty in making decisions'
+            'question' => 'Difficulty in making decisions',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Difficulty in making friends'
+            'question' => 'Difficulty in making friends',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Identity Crisis'
+            'question' => 'Identity Crisis',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Immature/Childish'
+            'question' => 'Immature/Childish',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Too easily discouraged'
+            'question' => 'Too easily discouraged',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Too easily led by other people'
+            'question' => 'Too easily led by other people',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Controlling sex urges'
+            'question' => 'Controlling sex urges',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Indulging in billiards'
+            'question' => 'Indulging in billiards',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Indulging in computer games'
+            'question' => 'Indulging in computer games',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Indulging in drinking'
+            'question' => 'Indulging in drinking',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Indulging in drugs'
+            'question' => 'Indulging in drugs',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Indulging in gambling'
+            'question' => 'Indulging in gambling',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Indulging in smoking'
+            'question' => 'Indulging in smoking',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Easily looses temper'
+            'question' => 'Easily looses temper',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Lacking self-control'
+            'question' => 'Lacking self-control',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Easily gets worried'
+            'question' => 'Easily gets worried',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Easily gets nervous'
+            'question' => 'Easily gets nervous',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Shy/Timid'
+            'question' => 'Shy/Timid',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Misunderstanding with mother'
+            'question' => 'Misunderstanding with mother',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Misunderstanding with father'
+            'question' => 'Misunderstanding with father',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Parents Separated/divorced'
+            'question' => 'Parents Separated/divorced',
+            'category_id' => 1
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Relatives interfering with family affairs'
+            'question' => 'Relatives interfering with family affairs',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Brothers/sisters rivalry'
+            'question' => 'Brothers/sisters rivalry',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Disappointment in love affair'
+            'question' => 'Disappointment in love affair',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Girlfriend/Boyfriend'
+            'question' => 'Problems with Girlfriend/Boyfriend',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Coping with faculty standards'
+            'question' => 'Coping with faculty standards',
+            'category_id' => 4
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Financial Matters'
+            'question' => 'Financial Matters',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Not interested in the course'
+            'question' => 'Not interested in the course',
+            'category_id' => 4
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Not interested in the course'
+            'question' => 'Study habits',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Study habits'
+            'question' => 'Habitual Absences',
+            'category_id' => 3
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Habitual Absences'
+            'question' => 'Tardiness',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Tardiness'
+            'question' => 'Getting low grades',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Getting low grades'
+            'question' => 'Coping with academic problems (Chemistry)',
+            'category_id' => 4
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Coping with academic problems (Chemistry)'
+            'question' => 'Coping with academic problems (English)',
+            'category_id' => 4
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Coping with academic problems (English)'
+            'question' => 'Coping with academic problems (Math)',
+            'category_id' => 4
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Coping with academic problems (Math)'
+            'question' => 'Coping with academic problems (Physics)',
+            'category_id' => 4
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Coping with academic problems (Physics)'
+            'question' => 'Coping with academic problems (Others)',
+            'category_id' => 4
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Coping with academic problems (Others)'
+            'question' => 'Time management',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Time management'
+            'question' => 'Inhibited to talk about own feelings',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Inhibited to talk about own feelings'
+            'question' => 'Jealousy',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Jealousy'
+            'question' => 'Loneliness',
+            'category_id' => 2
         ]);
 
         NeedsAnalysis::create([
-            'question' => 'Loneliness'
+            'question' => 'Thought of suicide',
+            'category_id' => 1
         ]);
     }
 }
