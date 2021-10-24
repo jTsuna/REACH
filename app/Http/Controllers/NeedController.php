@@ -14,7 +14,18 @@ class NeedController extends Controller
      */
     public function index()
     {
-        return view('graph.show');
+        $billiards = Need::where('answer','=',21)->count();
+        $computerGames = Need::where('answer','=',22)->count();
+        $drinking = Need::where('answer','=',23)->count();
+        $drugs = Need::where('answer','=',24)->count();
+        $gambling = Need::where('answer','=',25)->count();
+        $smoking = Need::where('answer','=',26)->count();
+        $misunderstandingWithMother = Need::where('answer','=',32)->count();
+        $misunderstandingWithFather = Need::where('answer','=',33)->count();
+        $separatedParents = Need::where('answer','=',34)->count();
+        $tos = Need::where('answer','=',55)->count();
+        //dd($separatedParents);
+        return view('graph.show', compact('billiards','computerGames','drinking','drugs','gambling','smoking','misunderstandingWithMother','misunderstandingWithFather','separatedParents','tos'));
     }
 
     /**
@@ -52,7 +63,7 @@ class NeedController extends Controller
      */
     public function show(Need $need)
     {
-        //
+        
     }
 
     /**

@@ -35,11 +35,11 @@
 
 
         <div x-data="app()" x-cloak class="px-4 mt-32">
-            <div class="max-w-5xl py-10 mx-auto">
+            <div class="py-10 mx-auto max-w-7xl">
                 <div class="p-6 bg-white rounded-lg shadow">
                     <div class="md:flex md:justify-between md:items-center">
                         <div>
-                            <h2 class="text-xl font-bold leading-tight text-gray-800">Critical Needs</h2>
+                            <h2 class="text-xl font-bold leading-tight text-gray-800">Critical Needs analysis</h2>
                         </div>
 
                         <!-- Legends -->
@@ -112,8 +112,12 @@
         <script>
             function app() {
                 return {
-                    chartData: [30, 10, 3, 7, 8, 5],
-                    labels: ['Indulging in Vices', 'Misunderstanding with Parents', 'Parents are Separated',
+                    chartData: [{{ $billiards }}, {{ $computerGames }}, {{ $drinking }}, {{ $drugs }},
+                        {{ $gambling }}, {{ $smoking }}, {{ $separatedParents }},
+                        {{ $misunderstandingWithFather }}, {{ $misunderstandingWithMother }}, {{ $tos }}
+                    ],
+                    labels: ['Indulging in Billiards', 'Indulging in Computer Games', 'Indulging in Drinking',
+                        'Indulging in Drugs', 'Indulging in Gambling', 'Indulging in smoking', 'Parents are Separated',
                         'Misunderstanding with Father', 'Misunderstanding with Mother', 'Thoughts of Suicide'
                     ],
 
@@ -138,3 +142,22 @@
         </script>
     </div>
 </x-app-layout>
+{{-- {{ $billiards }}, {{ $computerGames }}, {{ $drinking }}, {{ $drugs }},
+                        {{ $gambling }}, {{ $smoking }}, {{ $misunderstandingWithMother }},
+                        {{ $misunderstandingWithFather }}, {{ $separatedParents }}, {{ $tos }} 
+                        
+                        
+                        , 'Indulging in Gambling', 'Indulging in smoking'
+                        'Parents are Separated',
+                        'Misunderstanding with Father', 'Misunderstanding with Mother', 'Thoughts of Suicide' --}}
+
+{{-- var billiards = {!! json_encode($billiards->toArray(chartData)) !!};
+                var computerGames = {!! json_encode($computerGames->toArray(chartData)) !!};
+                var drinking = {!! json_encode($drinking->toArray(chartData)) !!};
+                var drugs = {!! json_encode($drugs->toArray(chartData)) !!};
+                var gambling = {!! json_encode($drugs->toArray(chartData)) !!};
+                var smoking = {!! json_encode($smoking->toArray(chartData)) !!};
+                var misunderstandingWithMother = {!! json_encode($misunderstandingWithMother->toArray(chartData)) !!};
+                var misunderstandingWithFather = {!! json_encode($misunderstandingWithFather->toArray(chartData)) !!};
+                var separatedParents = {!! json_encode($separatedParents->toArray(chartData)) !!};
+                var tos = {!! json_encode($tos->toArray(chartData)) !!}; --}}
