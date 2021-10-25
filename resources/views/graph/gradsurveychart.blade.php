@@ -2,11 +2,12 @@
 
     <body>
         <div class="grid w-auto grid-cols-1 gap-2 p-4 md:grid-cols-2 md:gap-4">
-            <div class="w-auto border border-gray-200 h-96" id="year_graduated"></div>
-            <div class="w-auto border border-gray-200 h-96" id="gender"></div>
-            <div class="w-auto border border-gray-200 h-96" id="inlinejob"></div>
-            <div class="w-auto border border-gray-200 h-96" id="gotjob"></div>
-            <div class="w-auto border border-gray-200 h-96" id="undertakings"></div>
+            <div class="w-auto p-3 bg-white border border-gray-200 rounded-xl h-96" id="year_graduated"></div>
+            <div class="w-auto p-3 bg-white border border-gray-200 rounded-xl h-96" id="gender"></div>
+            <div class="w-auto p-3 bg-white border border-gray-200 rounded-xl h-96" id="inlinejob"></div>
+            <div class="w-auto p-3 bg-white border border-gray-200 rounded-xl h-96" id="gotjob"></div>
+            <div class="w-auto p-3 bg-white border border-gray-200 rounded-xl h-96 md:col-span-2" id="undertakings">
+            </div>
         </div>
 
     </body>
