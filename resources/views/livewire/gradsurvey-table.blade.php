@@ -12,6 +12,12 @@
                     <span>Upload File</span>
                 </button>
             </div>
+            <div class="flex items-center justify-center space-x-6">
+                <a href="{{ route('gradsurveys.create') }}"
+                    class="inline-flex items-center justify-center w-full px-4 py-2 space-x-3 text-xs font-bold tracking-widest text-gray-900 uppercase transition bg-white border border-yellow-500 rounded-lg md:w-auto hover:text-gray-900 hover:bg-yellow-500 hover:border-yellow-400 active:bg-black focus:outline-none focus:border-yellow-900 focus:ring focus:ring-yellow-300 disabled:opacity-25">
+                    <span>Show Graphical Results</span>
+                </a>
+            </div>
         </div>
         <div class="flex flex-col pt-4 max-h-96">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
